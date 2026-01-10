@@ -3,7 +3,7 @@
 import logging
 from pathlib import Path
 
-import imageio_ffmpeg  # type: ignore[import-untyped]
+import imageio_ffmpeg
 
 logger = logging.getLogger(__name__)
 
