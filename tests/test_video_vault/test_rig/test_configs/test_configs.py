@@ -1,6 +1,6 @@
 """module."""
 
-from video_vault.dev.configs.configs import PyprojectConfigFile
+from video_vault.rig.configs.configs import PyprojectConfigFile
 
 
 class TestPyprojectConfigFile:

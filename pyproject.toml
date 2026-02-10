@@ -2,9 +2,6 @@
 name = "video-vault"
 version = "0.6.49"
 description = "An application to download any video"
-authors = [
-    {name = "Winipedia"},
-]
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12,<3.14"
@@ -24,13 +21,16 @@ classifiers = [
 license-files = [
     "LICENSE",
 ]
-maintainers = [
-    {name = "Winipedia"},
-]
 keywords = []
 
+[[project.authors]]
+name = "Winipedia"
+
+[[project.maintainers]]
+name = "Winipedia"
+
 [project.scripts]
-video-vault = "pyrig.dev.cli.cli:main"
+video-vault = "pyrig.rig.cli.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Winipedia/video-vault"

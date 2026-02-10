@@ -3,10 +3,10 @@
 All subclasses of ConfigFile in the configs package are automatically called.
 """
 
-from winidjango.dev.configs.configs import (
+from winidjango.rig.configs.configs import (
     PyprojectConfigFile as WiniDjangoPyprojectConfigFile,
 )
-from winipyside.dev.configs.configs import (
+from winipyside.rig.configs.configs import (
     PyprojectConfigFile as WiniPySidePyprojectConfigFile,
 )
 
