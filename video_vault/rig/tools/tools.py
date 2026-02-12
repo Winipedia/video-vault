@@ -9,10 +9,10 @@ class Pyrigger(BasePyrigger):
     """Pyrigger class for video_vault."""
 
     @classmethod
-    def get_dev_dependencies(cls) -> list[str]:
+    def dev_dependencies(cls) -> list[str]:
         """Get the dev dependencies."""
         return [
-            *super().get_dev_dependencies(),
+            *super().dev_dependencies(),
             "yt-dlp-types",
         ]
 

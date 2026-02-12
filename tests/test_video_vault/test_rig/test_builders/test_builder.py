@@ -7,6 +7,6 @@ from video_vault.src.db import migrations
 class TestVideoVaultBuilder:
     """Test class."""
 
-    def test_get_additional_resource_pkgs(self) -> None:
+    def test_additional_resource_packages(self) -> None:
         """Test method."""
-        assert VideoVaultBuilder.get_additional_resource_pkgs() == [migrations]
+        assert VideoVaultBuilder.additional_resource_packages() == [migrations]
