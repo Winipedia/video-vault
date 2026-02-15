@@ -13,7 +13,6 @@ from video_vault.src.db import migrations
 class VideoVaultBuilder(PyInstallerBuilder):
     """Build class for video_vault."""
 
-    @classmethod
-    def additional_resource_packages(cls) -> list[ModuleType]:
+    def additional_resource_packages(self) -> list[ModuleType]:
         """Get additional resource packages."""
         return [migrations]

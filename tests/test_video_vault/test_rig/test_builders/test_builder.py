@@ -9,4 +9,4 @@ class TestVideoVaultBuilder:
 
     def test_additional_resource_packages(self) -> None:
         """Test method."""
-        assert VideoVaultBuilder.additional_resource_packages() == [migrations]
+        assert VideoVaultBuilder().additional_resource_packages() == [migrations]

@@ -8,7 +8,7 @@ class TestPyrigger:
 
     def test_dev_dependencies(self) -> None:
         """Test method."""
-        result = Pyrigger.dev_dependencies()
+        result = Pyrigger().dev_dependencies()
         assert "yt-dlp-types" in result
 
 

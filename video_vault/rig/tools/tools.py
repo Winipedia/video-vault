@@ -8,8 +8,7 @@ from winipyside.rig.tools.project_tester import ProjectTester as BaseProjectTest
 class Pyrigger(BasePyrigger):
     """Pyrigger class for video_vault."""
 
-    @classmethod
-    def dev_dependencies(cls) -> list[str]:
+    def dev_dependencies(self) -> list[str]:
         """Get the dev dependencies."""
         return [
             *super().dev_dependencies(),
