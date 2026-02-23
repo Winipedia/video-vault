@@ -8,12 +8,12 @@ from winipyside.rig.tools.project_tester import ProjectTester as BaseProjectTest
 class Pyrigger(BasePyrigger):
     """Pyrigger class for video_vault."""
 
-    def dev_dependencies(self) -> list[str]:
+    def dev_dependencies(self) -> tuple[str, ...]:
         """Get the dev dependencies."""
-        return [
+        return (
             *super().dev_dependencies(),
             "yt-dlp-types",
-        ]
+        )
 
 
 class ProjectTester(BaseProjectTester, BaseProjectTester2):
