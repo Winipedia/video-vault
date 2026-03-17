@@ -40,4 +40,8 @@ class File(BaseModel):
     @property
     def display_name(self) -> str:
         """Get the display name."""
-        return Path(self.file.name).with_suffix("").name
+        name = self.file.name
+        if name is None:
+            msg = "File name is None"
+            raise ValueError(msg)
+        return Path(name).with_suffix("").name
