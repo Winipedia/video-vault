@@ -101,7 +101,7 @@ def do_download(tempdir: str, url: str, cookies: list[Cookie]) -> Path:
         ],
     }
     try:
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:  # type: ignore[arg-type]
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:  # ty:ignore[invalid-argument-type]
             info = ydl.extract_info(url, download=True)
     except Exception as e:
         msg = f"Download failed: {e}"
