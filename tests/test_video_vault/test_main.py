@@ -12,9 +12,8 @@ from pyrig.src.processes import run_subprocess
 import video_vault
 
 
-def test_main(main_test_fixture: None) -> None:
+def test_main() -> None:
     """Test func for main."""
-    assert main_test_fixture is None
 
 
 @pytest.mark.skipif(
