@@ -8,8 +8,7 @@ from pathlib import Path
 
 import pytest
 from pyrig.core.processes import run_subprocess
-
-import video_vault
+from pyrig.rig.tools.package_manager import PackageManager
 
 
 def test_main() -> None:
@@ -20,17 +19,15 @@ def test_main() -> None:
     platform.system() == "Windows",
     reason="Test fails on Windows due to windows paths in gitub ci",
 )
-def test_run(tmp_path: Path) -> None:
+def test_run(tmp_project_root_path: Path, tmp_source_root_path: Path) -> None:
     """Test func for main."""
     # copy the video_vault folder to a temp directory
     # run main.py from that directory
 
-    video_vault_path = Path(video_vault.__path__[0])
-
-    temp_video_vault_path = tmp_path / video_vault.__name__
-
     # shutil video_vault_path to tmp_path
-    shutil.copytree(video_vault_path, temp_video_vault_path)
+    shutil.copytree(
+        PackageManager.I.source_root(), tmp_source_root_path, dirs_exist_ok=True
+    )
 
     files = [
         "pyproject.toml",
@@ -40,10 +37,10 @@ def test_run(tmp_path: Path) -> None:
     ]
 
     for file in files:
-        shutil.copy(file, temp_video_vault_path.parent)
+        shutil.copy(file, tmp_project_root_path)
 
     env = os.environ.copy()
-    with chdir(tmp_path):
+    with chdir(tmp_project_root_path):
         # install deps
         run_subprocess(["uv", "sync", "--no-dev"])
 
