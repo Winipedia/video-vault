@@ -1,13 +1,13 @@
 """Main entrypoint for the project."""
 
 import logging
+import os
 import sys
 
 from PySide6.QtWidgets import QApplication
 
 from video_vault.core.ui.stylesheet import STYLESHEET
 from video_vault.core.ui.windows.main import VideoVault as VideoVaultWindow
-from video_vault.rig.tools.tools import ProjectTester
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ def run() -> None:
     """Main function to run the application."""
     # if pytest is running exit with 0 before creating the window
     # to avoid segfaults in headless environments
-    if ProjectTester.I.is_running_tests():
+    if os.getenv("PYTEST_VERSION") is not None:
         return
 
     # Create QApplication - this manages the entire app
