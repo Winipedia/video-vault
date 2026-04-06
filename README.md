@@ -37,10 +37,10 @@
 ## Features
 
 - **Download videos**
-   from any platform (YouTube, Vimeo, etc.) using an embedded browser
+  from any platform (YouTube, Vimeo, etc.) using an embedded browser
 - **Encrypted storage** with AES-GCM encryption for all downloaded videos
 - **Built-in video player**
-   with automatic position tracking and resume functionality
+  with automatic position tracking and resume functionality
 - **Cross-platform** support (Windows, macOS, Linux)
 - **Dark theme** UI inspired by Netflix
 

@@ -167,9 +167,9 @@ If the application won't launch:
 
 - **Video Quality**: Videos are downloaded in the best available MP4 format
 - **Storage Space**:
-    Monitor your disk space - encrypted videos take the
-        same space as unencrypted ones
+  Monitor your disk space - encrypted videos take the
+  same space as unencrypted ones
 - **Backup**: The database and media files
-    can be backed up from the data storage locations
+  can be backed up from the data storage locations
 - **Privacy**: All videos are stored locally and encrypted,
-    nothing is uploaded to external servers
+  nothing is uploaded to external servers

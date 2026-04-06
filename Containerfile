@@ -5,7 +5,7 @@ COPY README.md LICENSE pyproject.toml uv.lock ./
 RUN useradd -m -u 1000 appuser
 RUN chown -R appuser:appuser .
 USER appuser
-COPY --chown=appuser:appuser video_vault video_vault
+COPY --chown=appuser:appuser src/video_vault src/video_vault
 RUN uv sync --no-group dev
 RUN rm README.md LICENSE pyproject.toml uv.lock
 ENTRYPOINT ["uv", "run", "video-vault"]

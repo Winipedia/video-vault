@@ -51,7 +51,7 @@ All downloaded videos are encrypted and stored locally on your computer.
 ## Key Features
 
 - **Universal Video Downloads**:
-    Download videos from YouTube, Vimeo, and other platforms
+  Download videos from YouTube, Vimeo, and other platforms
 - **Encrypted Storage**: All videos are encrypted with AES-GCM encryption
 - **Resume Playback**: Videos automatically resume from where you left off
 - **Cross-Platform**: Works on Windows, macOS, and Linux

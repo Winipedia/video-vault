@@ -70,10 +70,6 @@ requires = [
 ]
 build-backend = "uv_build"
 
-[tool.uv.build-backend]
-module-name = "video_vault"
-module-root = ""
-
 [tool.ruff]
 exclude = [
     ".*",
