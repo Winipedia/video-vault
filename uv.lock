@@ -1928,16 +1928,16 @@ wheels = [
 
 [[package]]
 name = "winidjango"
-version = "2.0.88"
+version = "2.0.89"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
     { name = "django-stubs-ext" },
     { name = "winiutils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/84/ca/25a60121381fb55de56f54ea1c7a2629229fb88213d8647f30bc2c8709d2/winidjango-2.0.88.tar.gz", hash = "sha256:e602547a493791d85d6053d18decb83a67f6e625b76d79401944bc13e7cac1d1", size = 17786, upload-time = "2026-04-06T18:53:47.783Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/af/a2/0fb434115e60f120d76a5564fc0b0b5cf98e86e764ec0ed01bb0a2285343/winidjango-2.0.89.tar.gz", hash = "sha256:b6f60c719ef7cc40f7b60bd7618d4f177bae020df14dd56711e6822f9a5a59f3", size = 17820, upload-time = "2026-04-07T02:37:12.115Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f4/7b/3d21172b8969525bb5c7b922f14da1863ad3268ed1920856b369c6063118/winidjango-2.0.88-py3-none-any.whl", hash = "sha256:0aed580a878d40012f3c12125f37b8e8ced16b0e47cee9c1f041195e0974d5a6", size = 23724, upload-time = "2026-04-06T18:53:48.548Z" },
+    { url = "https://files.pythonhosted.org/packages/2a/91/834b6412a5c04285071d8b6b58b47a85c462264a3e384bc4aded11344c58/winidjango-2.0.89-py3-none-any.whl", hash = "sha256:2aff7ea282cc10147406f8c9cb043adf66fc45545940c283205243c80c846f6a", size = 23767, upload-time = "2026-04-07T02:37:11.15Z" },
 ]
 
 [[package]]
