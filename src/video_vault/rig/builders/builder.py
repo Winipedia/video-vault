@@ -7,7 +7,7 @@ from collections.abc import Generator
 from types import ModuleType
 
 from pyrig.core.iterate import combine_generators
-from pyrig.rig.builders.pyinstaller import PyInstallerBuilder
+from pyrig.rig.builders.base.pyinstaller import PyInstallerBuilder
 
 from video_vault import main
 from video_vault.core.db import migrations
