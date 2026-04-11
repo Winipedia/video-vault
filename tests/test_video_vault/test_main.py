@@ -7,7 +7,7 @@ from contextlib import chdir
 from pathlib import Path
 
 import pytest
-from pyrig.core.processes import run_subprocess
+from pyrig.core.subprocesses import run_subprocess
 from pyrig.rig.tools.package_manager import PackageManager
 
 
