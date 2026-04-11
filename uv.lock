@@ -1824,7 +1824,7 @@ wheels = [
 
 [[package]]
 name = "video-vault"
-version = "0.6.66"
+version = "0.6.67"
 source = { editable = "." }
 dependencies = [
     { name = "imageio-ffmpeg" },
