@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "0.6.67"
+version = "0.6.68"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
