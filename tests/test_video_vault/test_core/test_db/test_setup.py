@@ -5,6 +5,7 @@ from pathlib import Path
 
 from pytest_mock import MockerFixture
 
+from video_vault.core import db
 from video_vault.core.db import setup as setup_db_module
 from video_vault.core.db.setup import setup_django
 
@@ -58,9 +59,7 @@ def test_setup_django(mocker: MockerFixture) -> None:
         # Check installed apps
         assert "INSTALLED_APPS" in call_args, "INSTALLED_APPS should be configured"
         installed_apps = call_args["INSTALLED_APPS"]
-        expected_apps = [
-            setup_db_module.__name__ + ".db",
-        ]
+        expected_apps = [db.__name__]
         for app in expected_apps:
             assert app in installed_apps, f"App {app} should be in INSTALLED_APPS"
 
