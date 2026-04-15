@@ -1824,7 +1824,7 @@ wheels = [
 
 [[package]]
 name = "video-vault"
-version = "0.6.68"
+version = "0.6.69"
 source = { editable = "." }
 dependencies = [
     { name = "imageio-ffmpeg" },
@@ -1928,16 +1928,16 @@ wheels = [
 
 [[package]]
 name = "winidjango"
-version = "2.0.93"
+version = "2.0.94"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
     { name = "django-stubs-ext" },
     { name = "winiutils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/20/f5/ce91f5a7e596291edf65b43c98fcc90f3596ecd698da776e5a28a3160f45/winidjango-2.0.93.tar.gz", hash = "sha256:7b9f6b1d22602489f37678818b5b4a1fbc4e9540c276b13b4e24b16d95d06a71", size = 17805, upload-time = "2026-04-13T23:48:34.899Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/29/7a64686971b674b32904e93f3ddac1cc2b36983053530c0e5f62678ed41c/winidjango-2.0.94.tar.gz", hash = "sha256:fc1fe395484d4e7705a98a8e7270c8fd9cbae47fbe0f67f09ff88d31f49825ed", size = 17796, upload-time = "2026-04-15T14:42:34.598Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2b/2d/0ab530add847257b66c08e4199540ff78915fc94d007d86455958898609b/winidjango-2.0.93-py3-none-any.whl", hash = "sha256:f888d9a0322cf51c984803b02e880af7a603338db5bd99f34822ec0bcf9864af", size = 23768, upload-time = "2026-04-13T23:48:33.632Z" },
+    { url = "https://files.pythonhosted.org/packages/db/86/9e35cca803f9d55c0f49cb33aab52b62b5c2bd16eae93d59e209653b1f8b/winidjango-2.0.94-py3-none-any.whl", hash = "sha256:1c28b6d95e3ed46919076ccd8b366a75680c8645aa33b4e0c5207403d315d824", size = 23770, upload-time = "2026-04-15T14:42:35.339Z" },
 ]
 
 [[package]]
