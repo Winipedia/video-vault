@@ -1,6 +1,6 @@
 """This module contains constants for the application."""
 
-from pyrig.core.string_ import make_name_from_obj
+from pyrig.core.strings import make_name_from_obj
 
 import video_vault
 
