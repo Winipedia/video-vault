@@ -2,7 +2,6 @@
 
 import pytest
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.core import security as security_module
@@ -14,7 +13,7 @@ def test_get_or_create_app_aes_gcm(mocker: MockerFixture) -> None:
     """Test func for get_or_create_app_aes_gcm."""
     # Mock the winiutils function
     mock_get_or_create_aes_gcm = mocker.patch(
-        make_obj_importpath(security_module) + ".get_or_create_aes_gcm"
+        security_module.__name__ + ".get_or_create_aes_gcm"
     )
     mock_aes_gcm = mocker.Mock(spec=AESGCM)
     # Return a tuple since the code accesses [0]
@@ -34,11 +33,9 @@ def test_get_app_key_as_str(mocker: MockerFixture) -> None:
     """Test func for get_app_key_as_str."""
     # Mock dependencies
     mock_get_or_create_aes_gcm = mocker.patch(
-        make_obj_importpath(security_module) + ".get_or_create_aes_gcm"
+        security_module.__name__ + ".get_or_create_aes_gcm"
     )
-    mock_get_key_as_str = mocker.patch(
-        make_obj_importpath(security_module) + ".get_key_as_str"
-    )
+    mock_get_key_as_str = mocker.patch(security_module.__name__ + ".get_key_as_str")
 
     # Test successful case
     expected_key = "test_key_string"

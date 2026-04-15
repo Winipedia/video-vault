@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 import pytest
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.core import downloads as downloads_module
@@ -37,9 +36,7 @@ def test_add_download(mocker: MockerFixture, tmp_path: Path) -> None:
     mock_ydl_instance.prepare_filename.return_value = str(fake_video_file)
 
     # Mock the YoutubeDL constructor to return our mock instance
-    mock_ydl_class = mocker.patch(
-        make_obj_importpath(downloads_module) + ".yt_dlp.YoutubeDL"
-    )
+    mock_ydl_class = mocker.patch(downloads_module.__name__ + ".yt_dlp.YoutubeDL")
     mock_ydl_class.return_value.__enter__.return_value = mock_ydl_instance
 
     result = add_download(test_url, cookies)
@@ -64,9 +61,7 @@ def test_do_download(mocker: MockerFixture, tmp_path: Path) -> None:
     mock_ydl_instance.prepare_filename.return_value = str(fake_video_file)
 
     # Mock the YoutubeDL constructor to return our mock instance
-    mock_ydl_class = mocker.patch(
-        make_obj_importpath(downloads_module) + ".yt_dlp.YoutubeDL"
-    )
+    mock_ydl_class = mocker.patch(downloads_module.__name__ + ".yt_dlp.YoutubeDL")
     mock_ydl_class.return_value.__enter__.return_value = mock_ydl_instance
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -114,9 +109,7 @@ class TestDownloadWorker:
         cookies: list[Cookie] = []
 
         # Mock only the download function, not Qt components
-        mock_add_download = mocker.patch(
-            make_obj_importpath(downloads_module) + ".add_download"
-        )
+        mock_add_download = mocker.patch(downloads_module.__name__ + ".add_download")
         mock_file = mocker.Mock()
         mock_file.display_name = "Test Video"
         mock_add_download.return_value = mock_file
@@ -157,9 +150,7 @@ class TestDownloadWorker:
         cookies: list[Cookie] = []
 
         # Mock only the notification
-        mock_notification = mocker.patch(
-            make_obj_importpath(downloads_module) + ".Notification"
-        )
+        mock_notification = mocker.patch(downloads_module.__name__ + ".Notification")
         mock_notification_instance = mocker.Mock()
         mock_notification.return_value = mock_notification_instance
 
@@ -180,7 +171,7 @@ class TestDownloadWorker:
 
         # Mock the Downloads page import inside the method
         mock_downloads_page = mocker.patch(
-            make_obj_importpath(downloads_page_module) + ".Downloads"
+            downloads_page_module.__name__ + ".Downloads"
         )
         mock_page_instance = mocker.Mock()
         mock_downloads_page.get_page_static.return_value = mock_page_instance

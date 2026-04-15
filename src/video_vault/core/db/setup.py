@@ -13,7 +13,6 @@ import django
 from django.conf import settings
 from django.core.management import call_command
 from platformdirs import user_data_dir
-from pyrig.core.modules.module import make_obj_importpath
 
 from video_vault.core import db
 from video_vault.core.core.consts import APP_NAME, AUTHOR
@@ -48,7 +47,7 @@ def setup_django() -> None:
             }
         },
         INSTALLED_APPS=[
-            make_obj_importpath(db),
+            db.__name__,
         ],
         MEDIA_ROOT=media_root,
         MEDIA_URL="/media/",

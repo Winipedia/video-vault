@@ -1,6 +1,5 @@
 """module."""
 
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.ui.pages.downloads import Downloads as DownloadsPage
@@ -20,7 +19,7 @@ class TestVideoVault:
         expected_pages = [mock_page1, mock_page2, mock_page3]
 
         mock_get_subclasses = mocker.patch(
-            make_obj_importpath(windows_main_module) + ".BasePage.get_subclasses"
+            windows_main_module.__name__ + ".BasePage.get_subclasses"
         )
         mock_get_subclasses.return_value = expected_pages
 

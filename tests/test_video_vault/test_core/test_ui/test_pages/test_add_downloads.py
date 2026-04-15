@@ -1,6 +1,5 @@
 """module."""
 
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.ui.pages import add_downloads as add_downloads_module
@@ -49,7 +48,7 @@ class TestAddDownloads:
 
         # Mock QPushButton creation
         mocker.patch(
-            make_obj_importpath(add_downloads_module) + ".QPushButton",
+            add_downloads_module.__name__ + ".QPushButton",
             return_value=mock_button,
         )
         page.add_download_button()
@@ -65,7 +64,7 @@ class TestAddDownloads:
         """Test method for on_add_download."""
         # Mock the DownloadWorker to avoid actual downloads
         mock_download_worker = mocker.patch(
-            make_obj_importpath(add_downloads_module) + ".DownloadWorker"
+            add_downloads_module.__name__ + ".DownloadWorker"
         )
         mock_worker_instance = mocker.Mock()
         mock_download_worker.return_value = mock_worker_instance

@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.ui.pages import player as player_module
@@ -106,7 +105,7 @@ class TestPlayer:
         # Mock the security function and play_encrypted_file method
         mock_aes_gcm = mocker.Mock()
         mock_get_or_create_app_aes_gcm = mocker.patch(
-            make_obj_importpath(player_module) + ".get_or_create_app_aes_gcm"
+            player_module.__name__ + ".get_or_create_app_aes_gcm"
         )
         mock_get_or_create_app_aes_gcm.return_value = mock_aes_gcm
 
@@ -134,7 +133,7 @@ class TestPlayer:
         # Mock the security function and play_encrypted_file method
         mock_aes_gcm = mocker.Mock()
         mock_get_or_create_app_aes_gcm = mocker.patch(
-            make_obj_importpath(player_module) + ".get_or_create_app_aes_gcm"
+            player_module.__name__ + ".get_or_create_app_aes_gcm"
         )
         mock_get_or_create_app_aes_gcm.return_value = mock_aes_gcm
 

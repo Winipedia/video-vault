@@ -3,10 +3,8 @@
 import tempfile
 from pathlib import Path
 
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
-from video_vault.core import db
 from video_vault.core.db import setup as setup_db_module
 from video_vault.core.db.setup import setup_django
 
@@ -14,21 +12,13 @@ from video_vault.core.db.setup import setup_django
 def test_setup_django(mocker: MockerFixture) -> None:
     """Test func for setup_django."""
     # Mock external dependencies
-    mock_user_data_dir = mocker.patch(
-        make_obj_importpath(setup_db_module) + ".user_data_dir"
-    )
-    mock_get_app_key = mocker.patch(
-        make_obj_importpath(setup_db_module) + ".get_app_key_as_str"
-    )
-    mock_django_setup = mocker.patch(
-        make_obj_importpath(setup_db_module) + ".django.setup"
-    )
-    mock_call_command = mocker.patch(
-        make_obj_importpath(setup_db_module) + ".call_command"
-    )
+    mock_user_data_dir = mocker.patch(setup_db_module.__name__ + ".user_data_dir")
+    mock_get_app_key = mocker.patch(setup_db_module.__name__ + ".get_app_key_as_str")
+    mock_django_setup = mocker.patch(setup_db_module.__name__ + ".django.setup")
+    mock_call_command = mocker.patch(setup_db_module.__name__ + ".call_command")
 
     # Mock settings to avoid "already configured" error
-    mock_settings = mocker.patch(make_obj_importpath(setup_db_module) + ".settings")
+    mock_settings = mocker.patch(setup_db_module.__name__ + ".settings")
     mock_settings.configured = False  # Pretend settings aren't configured yet
 
     # Create a temporary directory for testing
@@ -69,7 +59,7 @@ def test_setup_django(mocker: MockerFixture) -> None:
         assert "INSTALLED_APPS" in call_args, "INSTALLED_APPS should be configured"
         installed_apps = call_args["INSTALLED_APPS"]
         expected_apps = [
-            make_obj_importpath(db),
+            setup_db_module.__name__ + ".db",
         ]
         for app in expected_apps:
             assert app in installed_apps, f"App {app} should be in INSTALLED_APPS"

@@ -2,7 +2,6 @@
 
 from pathlib import Path
 
-from pyrig.core.modules.module import make_obj_importpath
 from pytest_mock import MockerFixture
 
 from video_vault.core.ui.pages import downloads as downloads_module
@@ -56,7 +55,7 @@ class TestDownloads:
         mock_h_layout = mocker.Mock()
         mock_button = mocker.Mock()
         mocker.patch(
-            make_obj_importpath(downloads_module) + ".QPushButton",
+            downloads_module.__name__ + ".QPushButton",
             return_value=mock_button,
         )
         mocker.patch.object(Downloads, "get_svg_icon")
@@ -83,9 +82,7 @@ class TestDownloads:
         mock_file2 = mocker.Mock()
         mock_files = [mock_file1, mock_file2]
 
-        mock_file_objects = mocker.patch(
-            make_obj_importpath(downloads_module) + ".File.objects"
-        )
+        mock_file_objects = mocker.patch(downloads_module.__name__ + ".File.objects")
         mock_file_objects.all.return_value = mock_files
 
         # Mock remove_download_and_button method
@@ -139,9 +136,7 @@ class TestDownloads:
         mock_file2.display_name = "Video 2"
         mock_files = [mock_file1, mock_file2]
 
-        mock_file_objects = mocker.patch(
-            make_obj_importpath(downloads_module) + ".File.objects"
-        )
+        mock_file_objects = mocker.patch(downloads_module.__name__ + ".File.objects")
         mock_file_objects.all.return_value.order_by.return_value = mock_files
 
         # Mock Qt widgets
@@ -150,15 +145,13 @@ class TestDownloads:
         mock_scroll_area = mocker.Mock()
         mock_v_layout = mocker.Mock()
 
+        mocker.patch(downloads_module.__name__ + ".QWidget", return_value=mock_widget)
         mocker.patch(
-            make_obj_importpath(downloads_module) + ".QWidget", return_value=mock_widget
-        )
-        mocker.patch(
-            make_obj_importpath(downloads_module) + ".QVBoxLayout",
+            downloads_module.__name__ + ".QVBoxLayout",
             return_value=mock_layout,
         )
         mocker.patch(
-            make_obj_importpath(downloads_module) + ".QScrollArea",
+            downloads_module.__name__ + ".QScrollArea",
             return_value=mock_scroll_area,
         )
 
@@ -233,12 +226,10 @@ class TestDownloads:
         mock_downloads_layout = mocker.Mock()
 
         mock_qpushbutton = mocker.patch(
-            make_obj_importpath(downloads_module) + ".QPushButton",
+            downloads_module.__name__ + ".QPushButton",
             return_value=mock_button,
         )
-        mocker.patch(
-            make_obj_importpath(downloads_module) + ".QMenu", return_value=mock_menu
-        )
+        mocker.patch(downloads_module.__name__ + ".QMenu", return_value=mock_menu)
         mock_menu.addAction.side_effect = [mock_play_action, mock_delete_action]
         mocker.patch.object(Downloads, "get_svg_icon")
 
