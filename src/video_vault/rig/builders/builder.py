@@ -7,14 +7,14 @@ from collections.abc import Generator
 from types import ModuleType
 
 from pyrig.core.iterate import combine_generators
-from pyrig.rig.builders.base.pyinstaller import PyInstallerBuilder
+from pyrig.rig.builders.base.executable import ExecutableBuilder
 
 from video_vault import main
 from video_vault.core.db import migrations
 from video_vault.rig import resources
 
 
-class VideoVaultBuilder(PyInstallerBuilder):
+class VideoVaultBuilder(ExecutableBuilder):
     """Build class for video_vault."""
 
     def entry_point_module(self) -> ModuleType:
