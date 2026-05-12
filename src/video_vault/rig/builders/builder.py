@@ -3,7 +3,7 @@
 All subclasses of Builder in the builds package are automatically called.
 """
 
-from collections.abc import Generator
+from collections.abc import Iterator
 from itertools import chain
 from types import ModuleType
 
@@ -25,6 +25,6 @@ class VideoVaultBuilder(ExecutableBuilder):
         """Get the location of the app icon."""
         return "icon", resources
 
-    def resource_packages(self) -> Generator[ModuleType, None, None]:
+    def resource_packages(self) -> Iterator[ModuleType]:
         """Get the resource packages."""
-        return (r for r in chain(super().resource_packages(), (migrations,)))
+        return chain(super().resource_packages(), (migrations,))
