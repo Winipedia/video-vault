@@ -4,9 +4,9 @@ All subclasses of Builder in the builds package are automatically called.
 """
 
 from collections.abc import Generator
+from itertools import chain
 from types import ModuleType
 
-from pyrig.core.iterate import combine_generators
 from pyrig.rig.builders.base.executable import ExecutableBuilder
 
 from video_vault import main
@@ -27,4 +27,4 @@ class VideoVaultBuilder(ExecutableBuilder):
 
     def resource_packages(self) -> Generator[ModuleType, None, None]:
         """Get the resource packages."""
-        return combine_generators(super().resource_packages(), (migrations,))
+        return (r for r in chain(super().resource_packages(), (migrations,)))
