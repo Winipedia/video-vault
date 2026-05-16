@@ -110,7 +110,7 @@ files = "."
 testpaths = [
     "tests",
 ]
-addopts = "--cov=video_vault --cov-report=term-missing --cov-fail-under=90"
+addopts = "--cov=video_vault --cov-branch --cov-report=term-missing --cov-fail-under=90"
 
 [tool.ty.terminal]
 error-on-warning = true
