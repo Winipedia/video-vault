@@ -30,7 +30,7 @@ name = "Winipedia"
 name = "Winipedia"
 
 [project.scripts]
-video-vault = "pyrig.rig.cli.cli:main"
+video-vault = "pyrig.rig.cli.main:main"
 
 [project.urls]
 Homepage = "https://github.com/Winipedia/video-vault"
