@@ -17,13 +17,12 @@
 [![PythonLinter](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![MarkdownLinter](https://img.shields.io/badge/markdown-rumdl-darkgreen)](https://github.com/rvben/rumdl)
 [![TypeChecker](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ty/main/assets/badge/v0.json)](https://github.com/astral-sh/ty)
-<!-- project-info -->
-[![PackageIndex](https://img.shields.io/pypi/v/video-vault?logo=pypi&logoColor=white)](https://pypi.org/project/video-vault)
-[![ProgrammingLanguage](https://img.shields.io/pypi/pyversions/video-vault)](https://www.python.org)
-[![License](https://img.shields.io/github/license/Winipedia/video-vault)](https://github.com/Winipedia/video-vault/blob/main/LICENSE)
 <!-- testing -->
 [![ProjectTester](https://img.shields.io/badge/tested%20with-pytest-46a2f1.svg?logo=pytest)](https://pytest.org)
 [![CoverageTester](https://img.shields.io/badge/coverage->=50%25-hsl(60,80%25,45%25)?logo=codecov&logoColor=white)](https://github.com/pytest-dev/pytest-cov)
+<!-- project-info -->
+[![ProgrammingLanguage](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)](https://www.python.org)
+[![License](https://img.shields.io/github/license/Winipedia/video-vault)](https://github.com/Winipedia/video-vault/blob/main/LICENSE)
 <!-- ci/cd -->
 [![CI](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/health_check.yml?label=CI&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/health_check.yml)
 [![CD](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/release.yml?label=CD&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/release.yml)
