@@ -23,6 +23,7 @@
 [![DocsBuilder](https://img.shields.io/badge/MkDocs-Documentation-326CE5?logo=mkdocs&logoColor=white)](https://www.mkdocs.org)
 [![Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-black?style=for-the-badge&logo=github&logoColor=white)](https://Winipedia.github.io/video-vault)
 <!-- project-info -->
+[![ExecutableBuilder](https://img.shields.io/github/downloads/Winipedia/video-vault/total?logo=github&label=downloads)](https://github.com/Winipedia/video-vault/releases)
 [![ProgrammingLanguage](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)](https://www.python.org)
 [![License](https://img.shields.io/github/license/Winipedia/video-vault)](https://github.com/Winipedia/video-vault/blob/main/LICENSE)
 

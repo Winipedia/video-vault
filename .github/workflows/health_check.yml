@@ -38,8 +38,8 @@ jobs:
       run: uv sync
     - name: Install Pyside System Dependencies
       id: install-pyside-system-dependencies
-      run: sudo apt-get update && sudo apt-get install -y libegl1 libpulse0
       if: runner.os == 'Linux'
+      run: sudo apt-get update && sudo apt-get install -y libegl1 libpulse0
     - name: Run Pre Commit Hooks
       id: run-pre-commit-hooks
       run: uv run prek run --all-files --hook-stage pre-commit
@@ -80,8 +80,8 @@ jobs:
       run: uv sync
     - name: Install Pyside System Dependencies
       id: install-pyside-system-dependencies
-      run: sudo apt-get update && sudo apt-get install -y libegl1 libpulse0
       if: runner.os == 'Linux'
+      run: sudo apt-get update && sudo apt-get install -y libegl1 libpulse0
     - name: Run Tests
       id: run-tests
       run: uv run pytest
