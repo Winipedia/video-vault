@@ -6,7 +6,7 @@ All subclasses of ConfigFile in the configs package are automatically called.
 from collections.abc import Iterable
 from types import ModuleType
 
-from pyrig_executables.rig.configs.remote_version_control.workflows.release import (
+from pyrig_executables.rig.configs.remote_version_control.workflows.release import (  # deptry: ignore[DEP004]  # noqa: E501
     ReleaseWorkflowConfigFile as ExecutablesReleaseWorkflowConfigFile,
 )
 from winipyside.rig import resources

@@ -1,15 +1,20 @@
 [project]
 name = "video-vault"
-version = "0.13.0"
+version = "0.14.0"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12,<3.14"
 dependencies = [
+    "cryptography>=49.0.0",
+    "django>=6.0.6",
     "imageio-ffmpeg",
     "platformdirs",
+    "pyrig>=15.4.0",
+    "pyside6>=6.11.1",
     "winidjango",
     "winipyside",
+    "winiutils>=2.8.0",
     "yt-dlp",
 ]
 license-files = [
@@ -35,6 +40,7 @@ Changelog = "https://github.com/Winipedia/video-vault/releases"
 [dependency-groups]
 dev = [
     "bandit>=1.9.3",
+    "deptry>=0.25.1",
     "django-stubs>=5.2.9",
     "mkdocs-material>=9.7.1",
     "mkdocs-mermaid2-plugin>=1.2.3",
@@ -57,6 +63,7 @@ dev = [
     "ty>=0.0.16",
     "types-defusedxml>=0.7.0.20250822",
     "types-tqdm>=4.67.3.20260205",
+    "typos>=1.47.2",
     "yt-dlp-types>=0.0.18",
 ]
 
@@ -115,4 +122,12 @@ error-on-warning = true
 skips = [
     "*/tests/*.py",
     "*/test_*/*.py",
+]
+
+[tool.deptry]
+root = "src"
+
+[tool.deptry.per_rule_ignores]
+DEP002 = [
+    "pyrig",
 ]

@@ -111,5 +111,5 @@ def do_download(tempdir: str, url: str, cookies: list[Cookie]) -> Path:
 
 
 def save_download(path: Path) -> File:
-    """Save a download encryped to disk."""
+    """Save a download encrypted to disk."""
     return File.create_encrypted(path)
