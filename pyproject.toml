@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "0.17.0"
+version = "0.21.0"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
@@ -10,6 +10,7 @@ dependencies = [
     "django>=6.0.6",
     "imageio-ffmpeg",
     "platformdirs",
+    "pyrig-runtime",
     "pyrig>=15.4.0",
     "pyside6>=6.11.1",
     "winidjango",
@@ -28,7 +29,7 @@ name = "Winipedia"
 name = "Winipedia"
 
 [project.scripts]
-video-vault = "pyrig.rig.cli.main:main"
+video-vault = "pyrig_runtime.rig.cli.main:main"
 
 [project.urls]
 Homepage = "https://github.com/Winipedia/video-vault"
@@ -50,7 +51,7 @@ dev = [
     "pip-audit>=2.10.0",
     "prek>=0.3.2",
     "pyinstaller",
-    "pyrig-dev>=0.1.19",
+    "pyrig",
     "pyrig-executables>=1.6.0",
     "pyrig-fixtures>=0.8.0",
     "pytest-cov>=7.0.0",
@@ -128,5 +129,5 @@ root = "src"
 
 [tool.deptry.per_rule_ignores]
 DEP002 = [
-    "pyrig",
+    "pyrig-runtime",
 ]
