@@ -1,10 +1,12 @@
-"""Pytest configuration for tests.
+"""Pytest configuration for automatic fixture discovery across the pyrig ecosystem.
 
-This module configures pytest plugins for the test suite, setting up the necessary
-fixtures and hooks for the different
-test scopes (function, class, module, package, session).
-It also import custom plugins from tests/base/scopes.
-This file should not be modified manually.
+Registers fixture modules from pyrig and all installed packages that depend on
+it as pytest plugins. This makes all discovered fixtures available in every
+test module without explicit imports.
+
+The registration walks the ``<project_name>.rig.tests.fixtures`` package path in
+pyrig and all pyrig dependent packages, collecting all Python modules except
+``__init__.py`` modules and registers them as plugins.
 """
 
-pytest_plugins = ["pyrig.rig.tests.conftest"]
+pytest_plugins = ["pyrig_fixtures.rig.tests.conftest"]
