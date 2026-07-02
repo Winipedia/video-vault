@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "1.0.0"
+version = "1.1.0"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
@@ -8,15 +8,15 @@ requires-python = ">=3.12,<3.14"
 dependencies = [
     "cryptography>=49.0.0",
     "django>=6.0.6",
-    "imageio-ffmpeg",
-    "platformdirs",
-    "pyrig-runtime",
-    "pyrig>=15.4.0",
+    "imageio-ffmpeg>=0.6.0",
+    "platformdirs>=4.10.0",
+    "pyrig>=16.0.0",
+    "pyrig-runtime>=1.0.0",
     "pyside6>=6.11.1",
-    "winidjango",
-    "winipyside",
-    "winiutils>=2.8.0",
-    "yt-dlp",
+    "winidjango>=3.0.0",
+    "winipyside>=3.0.0",
+    "winiutils>=3.0.0",
+    "yt-dlp>=2026.6.9",
 ]
 license-files = [
     "LICENSE",
@@ -40,30 +40,30 @@ Changelog = "https://github.com/Winipedia/video-vault/releases"
 
 [dependency-groups]
 dev = [
-    "bandit>=1.9.3",
+    "bandit>=1.9.4",
     "deptry>=0.25.1",
-    "django-stubs>=5.2.9",
-    "mkdocs-material>=9.7.1",
-    "mkdocs-mermaid2-plugin>=1.2.3",
+    "django-stubs>=6.0.6",
     "mkdocs>=1.6.1",
-    "mkdocstrings[python]>=1.0.3",
-    "pillow>=12.2.0",
-    "pip-audit>=2.10.0",
-    "prek>=0.3.2",
-    "pyinstaller",
-    "pyrig",
-    "pyrig-executables>=1.6.0",
-    "pyrig-fixtures>=0.25.0",
-    "pytest-cov>=7.0.0",
-    "pytest-django>=4.11.1",
+    "mkdocs-material>=9.7.6",
+    "mkdocs-mermaid2-plugin>=1.2.3",
+    "mkdocstrings[python]>=1.0.4",
+    "pillow>=12.3.0",
+    "pip-audit>=2.10.1",
+    "prek>=0.4.6",
+    "pyinstaller>=6.21.0",
+    "pyrig>=16.0.0",
+    "pyrig-executables>=2.0.0",
+    "pyrig-fixtures>=1.0.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-django>=4.12.0",
     "pytest-qt>=4.5.0",
-    "pytest>=9.0.2",
-    "ruff>=0.15.0",
-    "rumdl>=0.1.18",
-    "ty>=0.0.16",
-    "types-defusedxml>=0.7.0.20250822",
-    "types-tqdm>=4.67.3.20260205",
-    "typos>=1.47.2",
+    "ruff>=0.15.20",
+    "rumdl>=0.2.27",
+    "ty>=0.0.56",
+    "types-defusedxml>=0.7.0.20260504",
+    "types-tqdm>=4.68.0.20260608",
+    "typos>=1.48.0",
     "yt-dlp-types>=0.0.18",
 ]
 
