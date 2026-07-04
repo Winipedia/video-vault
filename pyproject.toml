@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.0.1"
+version = "2.0.5"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
@@ -117,12 +117,6 @@ addopts = "--cov=video_vault --cov-branch --cov-report=term-missing --cov-fail-u
 
 [tool.ty.terminal]
 error-on-warning = true
-
-[tool.bandit.assert_used]
-skips = [
-    "*/tests/*.py",
-    "*/test_*/*.py",
-]
 
 [tool.deptry]
 root = "src"
