@@ -59,7 +59,8 @@ class TestFile:
         )
 
         # Verify the file is encrypted (content should be different from original)
-        encrypted_content = result.file.read()
+        with result.file.open("rb") as f:
+            encrypted_content = f.read()
         assert encrypted_content != test_content, "File content should be encrypted"
 
     @pytest.mark.django_db
