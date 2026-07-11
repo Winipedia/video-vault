@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.0.15"
+version = "2.1.0"
 description = "An application to download any video"
 readme = "README.md"
 license = "MIT"
@@ -83,40 +83,35 @@ select = [
     "ALL",
 ]
 ignore = [
-    "D203",
-    "D213",
     "COM812",
     "ANN401",
-]
-fixable = [
-    "ALL",
 ]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = [
     "S101",
 ]
-"**/tests/**/*.py" = [
-    "S101",
-]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.mypy]
-strict = true
-warn_unreachable = true
-show_error_codes = true
-files = "."
+[tool.ruff.format]
+docstring-code-format = true
 
-[tool.pytest.ini_options]
+[tool.pytest]
 testpaths = [
     "tests",
 ]
-addopts = "--cov=video_vault --cov-branch --cov-report=term-missing --cov-fail-under=50"
-
-[tool.ty.terminal]
-error-on-warning = true
+addopts = [
+    "--cov=video_vault",
+    "--cov-branch",
+    "--cov-fail-under=50",
+    "--cov-report=term-missing:skip-covered",
+]
+filterwarnings = [
+    "error",
+]
+strict = true
 
 [tool.deptry]
 root = "src"

@@ -1,3 +1,3 @@
-# API Reference
+# API
 
 ::: video_vault
