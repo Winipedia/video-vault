@@ -3,7 +3,7 @@
 Wraps CoverageTester commands and information.
 """
 
-from pyrig.rig.tools.testers.coverage import CoverageTester as BaseCoverageTester
+from pyrig.rig.tools.testing.coverage import CoverageTester as BaseCoverageTester
 
 
 class CoverageTester(BaseCoverageTester):
