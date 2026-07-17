@@ -97,7 +97,8 @@ class TestPlayer:
 
         # Verify start_playback was called with new file parameters
         mock_start_playback.assert_called_once_with(
-            Path("/fake/path/new_video.mp4"), 1000
+            Path("/fake/path/new_video.mp4"),
+            1000,
         )
 
     def test_start_playback(self, mocker: MockerFixture) -> None:
@@ -105,7 +106,7 @@ class TestPlayer:
         # Mock the security function and play_encrypted_file method
         mock_aes_gcm = mocker.Mock()
         mock_get_or_create_app_aes_gcm = mocker.patch(
-            player_module.__name__ + ".get_or_create_app_aes_gcm"
+            player_module.__name__ + ".get_or_create_app_aes_gcm",
         )
         mock_get_or_create_app_aes_gcm.return_value = mock_aes_gcm
 
@@ -125,7 +126,9 @@ class TestPlayer:
 
         # Verify play_encrypted_file was called with correct parameters
         mock_play_encrypted_file.assert_called_once_with(
-            test_path, mock_aes_gcm, test_position
+            test_path,
+            mock_aes_gcm,
+            test_position,
         )
 
     def test_start_playback_default_position(self, mocker: MockerFixture) -> None:
@@ -133,7 +136,7 @@ class TestPlayer:
         # Mock the security function and play_encrypted_file method
         mock_aes_gcm = mocker.Mock()
         mock_get_or_create_app_aes_gcm = mocker.patch(
-            player_module.__name__ + ".get_or_create_app_aes_gcm"
+            player_module.__name__ + ".get_or_create_app_aes_gcm",
         )
         mock_get_or_create_app_aes_gcm.return_value = mock_aes_gcm
 

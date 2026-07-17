@@ -97,7 +97,7 @@ def do_download(tempdir: str, url: str, cookies: list[Cookie]) -> Path:
             {
                 "key": "FFmpegVideoConvertor",
                 "preferedformat": "mp4",
-            }
+            },
         ],
     }
     try:

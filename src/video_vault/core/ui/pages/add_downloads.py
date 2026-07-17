@@ -37,7 +37,8 @@ class AddDownloads(BrowserPage):
         self.h_layout.addWidget(button)
         # align the button to the right
         self.h_layout.setAlignment(
-            button, Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop
+            button,
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop,
         )
 
     def on_add_download(self) -> None:

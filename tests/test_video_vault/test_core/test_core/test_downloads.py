@@ -133,7 +133,8 @@ class TestDownloadWorker:
         # Mock the methods after worker creation
         mock_show_notification = mocker.patch.object(worker, "show_notification")
         mock_update_downloads_page = mocker.patch.object(
-            worker, "update_downloads_page"
+            worker,
+            "update_downloads_page",
         )
 
         worker.on_finished()
@@ -171,7 +172,7 @@ class TestDownloadWorker:
 
         # Mock the Downloads page import inside the method
         mock_downloads_page = mocker.patch(
-            downloads_page_module.__name__ + ".Downloads"
+            downloads_page_module.__name__ + ".Downloads",
         )
         mock_page_instance = mocker.Mock()
         mock_downloads_page.get_page_static.return_value = mock_page_instance

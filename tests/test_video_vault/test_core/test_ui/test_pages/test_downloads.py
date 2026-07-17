@@ -23,13 +23,16 @@ class TestDownloads:
         """Test method for setup."""
         # Mock the methods that setup calls
         mock_add_add_downloads_button = mocker.patch.object(
-            Downloads, "add_add_downloads_button"
+            Downloads,
+            "add_add_downloads_button",
         )
         mock_add_download_buttons_scroll_area = mocker.patch.object(
-            Downloads, "add_download_buttons_scroll_area"
+            Downloads,
+            "add_download_buttons_scroll_area",
         )
         mock_add_delete_all_downloads_button = mocker.patch.object(
-            Downloads, "add_delete_all_downloads_button"
+            Downloads,
+            "add_delete_all_downloads_button",
         )
 
         # Create a mock instance and call setup
@@ -168,7 +171,7 @@ class TestDownloads:
         # Verify downloads were fetched and buttons were created
         mock_file_objects.all.assert_called_once()
         mock_file_objects.all.return_value.order_by.assert_called_once_with(
-            "-created_at"
+            "-created_at",
         )
 
         # Verify add_download_button was called for each file
@@ -213,7 +216,8 @@ class TestDownloads:
 
         # Verify playback was started with correct parameters
         mock_player_page.start_playback.assert_called_once_with(
-            Path("/fake/path/video.mp4"), 1500
+            Path("/fake/path/video.mp4"),
+            1500,
         )
 
     def test_add_download_button(self, mocker: MockerFixture) -> None:

@@ -46,7 +46,8 @@ class Downloads(BasePage):
         self.h_layout.addWidget(button)
         # align to be in center
         self.h_layout.setAlignment(
-            button, Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignTop
+            button,
+            Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignTop,
         )
         # icon
         button.setIcon(self.get_svg_icon("delete_garbage_can"))
@@ -65,14 +66,16 @@ class Downloads(BasePage):
         # now make the button top right in the layout, QV doesn't support this
         # so add a horizontal layout to the top row
         button = self.add_to_page_button(
-            to_page_cls=AddDownloadsPage, layout=self.h_layout
+            to_page_cls=AddDownloadsPage,
+            layout=self.h_layout,
         )
         button.setIcon(self.get_svg_icon("plus_icon"))
         # we need the button to be small
         button.setSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         # align the button to the right
         self.h_layout.setAlignment(
-            button, Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop
+            button,
+            Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop,
         )
 
     def add_download_buttons_scroll_area(self) -> None:
@@ -127,7 +130,7 @@ class Downloads(BasePage):
         delete_action = menu.addAction("Delete")
         delete_action.setIcon(self.get_svg_icon("delete_garbage_can"))
         delete_action.triggered.connect(
-            partial(self.remove_download_and_button, button)
+            partial(self.remove_download_and_button, button),
         )
 
         button.setMenu(menu)

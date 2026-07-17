@@ -18,7 +18,8 @@ from video_vault.core.db import migrations
 
 
 class ReleaseWorkflowConfigFile(
-    WinipysideReleaseWorkflowConfigFile, ExecutablesReleaseWorkflowConfigFile
+    WinipysideReleaseWorkflowConfigFile,
+    ExecutablesReleaseWorkflowConfigFile,
 ):
     """You can override methods from the base class to customize behavior."""
 

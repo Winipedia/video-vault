@@ -19,7 +19,7 @@ class File(BaseModel):
     file = models.FileField(upload_to=UPLOAD_TO)
     last_position: models.BigIntegerField[int, int] = models.BigIntegerField(default=0)
 
-    def delete_file(self, *args: Any, **kwargs: Any) -> tuple[int, dict[str, int]]:
+    def delete_file(self, *args: Any, **kwargs: Any) -> tuple[int, dict[str, int]]:  # noqa: ANN401
         """Delete a file."""
         # delete the file from the filesystem
         self.file.delete(save=False)
@@ -27,7 +27,7 @@ class File(BaseModel):
         return self.delete(*args, **kwargs)
 
     @classmethod
-    def create_encrypted(cls, path: Path, **kwargs: Any) -> "File":
+    def create_encrypted(cls, path: Path, **kwargs: Any) -> "File":  # noqa: ANN401
         """Create a file."""
         aes_gcm = get_or_create_app_aes_gcm()
 

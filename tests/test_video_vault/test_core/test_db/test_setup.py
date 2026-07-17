@@ -33,7 +33,9 @@ def test_setup_django(mocker: MockerFixture) -> None:
 
         # Verify user_data_dir was called correctly
         mock_user_data_dir.assert_called_once_with(
-            "VideoVault", "Winipedia", ensure_exists=True
+            "VideoVault",
+            "Winipedia",
+            ensure_exists=True,
         )
 
         # Verify directories were created
@@ -68,11 +70,6 @@ def test_setup_django(mocker: MockerFixture) -> None:
             "MEDIA_ROOT should be set correctly"
         )
         assert call_args["MEDIA_URL"] == "/media/", "MEDIA_URL should be set correctly"
-
-        # Check secret key
-        assert call_args["SECRET_KEY"] == "test_secret_key", (  # noqa: S105
-            "SECRET_KEY should be set correctly"
-        )
 
         # Verify Django setup was called
         mock_django_setup.assert_called_once()

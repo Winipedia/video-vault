@@ -11,7 +11,8 @@ logger = logging.getLogger(__name__)
 if __name__ == "__main__":
     # Configure Django settings
     logger.info(
-        "Importing %s creates the setup automatically via its __init__.py", db.__name__
+        "Importing %s creates the setup automatically via its __init__.py",
+        db.__name__,
     )
 
     # Create migrations

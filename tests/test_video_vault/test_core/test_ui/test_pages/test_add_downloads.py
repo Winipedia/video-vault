@@ -13,7 +13,8 @@ class TestAddDownloads:
         """Test method for pre_setup."""
         # Mock the add_download_button method to verify it's called
         mock_add_download_button = mocker.patch.object(
-            AddDownloads, "add_download_button"
+            AddDownloads,
+            "add_download_button",
         )
 
         # Create a mock instance and call pre_setup
@@ -64,7 +65,7 @@ class TestAddDownloads:
         """Test method for on_add_download."""
         # Mock the DownloadWorker to avoid actual downloads
         mock_download_worker = mocker.patch(
-            add_downloads_module.__name__ + ".DownloadWorker"
+            add_downloads_module.__name__ + ".DownloadWorker",
         )
         mock_worker_instance = mocker.Mock()
         mock_download_worker.return_value = mock_worker_instance
@@ -88,7 +89,8 @@ class TestAddDownloads:
 
         # Verify DownloadWorker was created with correct parameters
         mock_download_worker.assert_called_once_with(
-            url="https://www.youtube.com/watch?v=805SIqgDZIE", cookies=[]
+            url="https://www.youtube.com/watch?v=805SIqgDZIE",
+            cookies=[],
         )
 
         # Verify worker was started

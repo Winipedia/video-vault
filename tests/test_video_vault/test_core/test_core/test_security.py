@@ -13,7 +13,7 @@ def test_get_or_create_app_aes_gcm(mocker: MockerFixture) -> None:
     """Test func for get_or_create_app_aes_gcm."""
     # Mock the winiutils function
     mock_get_or_create_aes_gcm = mocker.patch(
-        security_module.__name__ + ".get_or_create_aes_gcm"
+        security_module.__name__ + ".get_or_create_aes_gcm",
     )
     mock_aes_gcm = mocker.Mock(spec=AESGCM)
     # Return a tuple since the code accesses [0]
@@ -33,7 +33,7 @@ def test_get_app_key_as_str(mocker: MockerFixture) -> None:
     """Test func for get_app_key_as_str."""
     # Mock dependencies
     mock_get_or_create_aes_gcm = mocker.patch(
-        security_module.__name__ + ".get_or_create_aes_gcm"
+        security_module.__name__ + ".get_or_create_aes_gcm",
     )
     mock_get_key_as_str = mocker.patch(security_module.__name__ + ".get_key_as_str")
 

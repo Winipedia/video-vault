@@ -19,7 +19,7 @@ class TestVideoVault:
         expected_pages = [mock_page1, mock_page2, mock_page3]
 
         mock_get_subclasses = mocker.patch(
-            windows_main_module.__name__ + ".BasePage.get_subclasses"
+            windows_main_module.__name__ + ".BasePage.get_subclasses",
         )
         mock_get_subclasses.return_value = expected_pages
 

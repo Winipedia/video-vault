@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('db', '0001_initial'),
+        ("db", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='file',
-            name='last_position',
+            model_name="file",
+            name="last_position",
             field=models.BigIntegerField(default=0),
         ),
     ]

@@ -44,7 +44,7 @@ def setup_django() -> None:
             "default": {
                 "ENGINE": "django.db.backends.sqlite3",
                 "NAME": str(db_path),
-            }
+            },
         },
         INSTALLED_APPS=[
             db.__name__,
