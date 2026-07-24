@@ -249,6 +249,7 @@ args = [
 types = [
   "python",
 ]
+exclude = "^src/video_vault/core/db/migrations/"
 stages = [
   "pre-commit",
 ]
