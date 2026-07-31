@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.15.13"
+version = "2.15.14"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -9,10 +9,10 @@ license-files = [
   "LICENSE",
 ]
 authors = [
-  { name = "Winipedia" },
+  { name = "Winipedia", email = "winipedia@gmx.de" },
 ]
 maintainers = [
-  { name = "Winipedia" },
+  { name = "Winipedia", email = "winipedia@gmx.de" },
 ]
 dependencies = [
   "cryptography>=49.0.0",
