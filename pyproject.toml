@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.15.15"
+version = "2.15.16"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -45,7 +45,6 @@ dev = [
   "django-stubs>=6.0.6",
   "mkdocs>=1.6.1",
   "mkdocs-material>=9.7.6",
-  "mkdocs-mermaid2-plugin>=1.2.3",
   "mkdocstrings[python]>=1.0.5",
   "pillow>=12.3.0",
   "pre-commit-hooks",
