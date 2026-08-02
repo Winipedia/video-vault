@@ -11,6 +11,13 @@ file and keyring storage directory (seen in CI as a keyring ``os.makedirs``
 Redirecting both to a private, per-worker temporary directory here runs
 before any test module can trigger the import, so every worker gets its own
 throwaway database and keyring store instead of sharing one.
+
+``winiutils.core.security.keyring`` itself swaps in a *default-path*
+``PlaintextKeyring`` on import when ``GITHUB_ACTIONS`` is set, which would
+clobber our isolated backend and reintroduce the same shared-file race
+across workers. That module-level side effect only runs once (on first
+import), so importing it here first lets it fire under our control, before
+we set the backend it will actually be used with.
 """
 
 import tempfile
@@ -19,10 +26,12 @@ from pathlib import Path
 import keyring
 import platformdirs
 from keyrings.alt.file import PlaintextKeyring
+from winiutils.core.security import keyring as winiutils_keyring
 
 
 def pytest_configure() -> None:
     """Isolate video_vault's app data dir and keyring before it is imported."""
+    assert winiutils_keyring
     test_data_dir = Path(tempfile.mkdtemp(prefix="video_vault_test_"))
 
     platformdirs.user_data_dir = lambda *_args, **_kwargs: str(test_data_dir)  # ty: ignore[invalid-assignment]
