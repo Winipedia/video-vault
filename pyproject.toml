@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.15.16"
+version = "2.15.17"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -43,8 +43,6 @@ dev = [
   "deptry>=0.25.1",
   "detect-secrets>=1.5.0",
   "django-stubs>=6.0.6",
-  "mkdocs>=1.6.1",
-  "mkdocs-material>=9.7.6",
   "mkdocstrings[python]>=1.0.5",
   "pillow>=12.3.0",
   "pre-commit-hooks",
@@ -69,6 +67,7 @@ dev = [
   "types-tqdm>=4.68.0.20260608",
   "typos>=1.48.0",
   "yt-dlp-types>=0.0.18",
+  "zensical>=0.0.52",
 ]
 
 [build-system]
