@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.15.20"
+version = "2.15.23"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -93,6 +93,7 @@ addopts = [
   "--cov=video_vault",
   "--dist=worksteal",
   "--numprocesses=auto",
+  "--report-chars=a",
 ]
 filterwarnings = [
   "error",
