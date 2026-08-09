@@ -1,10 +1,11 @@
 """Override pyrig tools."""
 
-from winidjango.rig.tools.tools import ProjectTester as BaseProjectTester
-from winipyside.rig.tools.project_tester import ProjectTester as BaseProjectTester2
+from pyrig.rig.tools.testing.project import (  # deptry: ignore[DEP004]
+    ProjectTester as BaseProjectTester,
+)
 
 
-class ProjectTester(BaseProjectTester, BaseProjectTester2):
+class ProjectTester(BaseProjectTester):
     """ProjectTester class for video_vault."""
 
     def threshold(self) -> int:

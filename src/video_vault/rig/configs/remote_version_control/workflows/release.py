@@ -7,19 +7,15 @@ from collections.abc import Iterable
 from types import ModuleType
 
 from pyrig_executables.rig.configs.version_control.remote.workflows.release import (  # deptry: ignore[DEP004]  # noqa: E501
-    ReleaseWorkflowConfigFile as ExecutablesReleaseWorkflowConfigFile,
+    ReleaseWorkflowConfigFile as BaseReleaseWorkflowConfigFile,
 )
 from winipyside.rig import resources
-from winipyside.rig.configs.configs import (
-    ReleaseWorkflowConfigFile as WinipysideReleaseWorkflowConfigFile,
-)
 
 from video_vault.core.db import migrations
 
 
 class ReleaseWorkflowConfigFile(
-    WinipysideReleaseWorkflowConfigFile,
-    ExecutablesReleaseWorkflowConfigFile,
+    BaseReleaseWorkflowConfigFile,
 ):
     """You can override methods from the base class to customize behavior."""
 
