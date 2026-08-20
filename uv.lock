@@ -1639,7 +1639,7 @@ wheels = [
 
 [[package]]
 name = "video-vault"
-version = "2.15.41"
+version = "2.16.0"
 source = { editable = "." }
 dependencies = [
     { name = "cryptography" },
