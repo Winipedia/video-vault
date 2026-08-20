@@ -16,7 +16,7 @@ def test_setup_django(mocker: MockerFixture) -> None:
     mock_user_data_dir = mocker.patch(setup_db_module.__name__ + ".user_data_dir")
     mock_get_app_key = mocker.patch(setup_db_module.__name__ + ".get_app_key_as_str")
     mock_django_setup = mocker.patch(setup_db_module.__name__ + ".django.setup")
-    mock_call_command = mocker.patch(setup_db_module.__name__ + ".call_command")
+    mock_migrate_safely = mocker.patch(setup_db_module.__name__ + ".migrate_safely")
 
     # Mock settings to avoid "already configured" error
     mock_settings = mocker.patch(setup_db_module.__name__ + ".settings")
@@ -75,4 +75,4 @@ def test_setup_django(mocker: MockerFixture) -> None:
         mock_django_setup.assert_called_once()
 
         # Verify migration was called (since db doesn't exist)
-        mock_call_command.assert_called_once()
+        mock_migrate_safely.assert_called_once()

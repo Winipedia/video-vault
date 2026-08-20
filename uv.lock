@@ -355,6 +355,15 @@ wheels = [
 ]
 
 [[package]]
+name = "filelock"
+version = "3.32.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/7d/64/a02e6765de08964ed371eca577870593245afc9dfac16d037de7c10d18e6/filelock-3.32.3.tar.gz", hash = "sha256:0ffa185a3540854c95caa7fa76b76cb219d907415e2c5dc9af25fd970563487f", size = 218135, upload-time = "2026-08-13T16:00:05.577Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a7/8e/50f46a9c0ce8d2861a394c1347caae037ea0431d2f67d7feb151cbc4649a/filelock-3.32.3-py3-none-any.whl", hash = "sha256:7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09", size = 98901, upload-time = "2026-08-13T16:00:03.974Z" },
+]
+
+[[package]]
 name = "ghp-import"
 version = "2.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1762,19 +1771,20 @@ wheels = [
 
 [[package]]
 name = "winidjango"
-version = "4.14.42"
+version = "4.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
     { name = "django-stubs-ext" },
+    { name = "filelock" },
     { name = "polars" },
     { name = "pyrig" },
     { name = "pyrig-runtime" },
     { name = "winiutils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/db/d5d8d528d4efc39868ae086e568a640ffe1ec50f28764affba80a88b50f0/winidjango-4.14.42.tar.gz", hash = "sha256:4e73865c75854a6e2f78a42536ca3ac31ee88f5091150aa481d543cb8a9d9b91", size = 19238, upload-time = "2026-08-19T09:38:29.294Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2c/16/e19fbdafb414eee72f5ebfb9006da22a5206218031658bb9f592c19a6bcd/winidjango-4.15.0.tar.gz", hash = "sha256:a46b3d7ad6394ba90f9be2bd7fd3c4bc16376e42417e6bc229ded0b0d5add52c", size = 19843, upload-time = "2026-08-20T11:51:53.972Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/15/bf/32539789fd6de42a290c189b1908ad2f615542428d292929c3d9dfff6780/winidjango-4.14.42-py3-none-any.whl", hash = "sha256:bd7be559788514d2f1f1d5829a4b39bce77c07321744c0d916df0ab6124ed7a4", size = 25366, upload-time = "2026-08-19T09:38:28.264Z" },
+    { url = "https://files.pythonhosted.org/packages/42/02/58123657ebc4694dd9aa9e1cf8130bf026c8fcd992855fd4b9c1d5cf0c8c/winidjango-4.15.0-py3-none-any.whl", hash = "sha256:d8dc2c9ac5965d6e6f04202dd871c1a58286bc1cab68b483b1b7bdba019c5b05", size = 26215, upload-time = "2026-08-20T11:51:52.837Z" },
 ]
 
 [[package]]

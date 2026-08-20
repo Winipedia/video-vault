@@ -11,8 +11,8 @@ from pathlib import Path
 
 import django
 from django.conf import settings
-from django.core.management import call_command
 from platformdirs import user_data_dir
+from winidjango.core.db.setup import migrate_safely
 
 from video_vault.core import db
 from video_vault.core.core.consts import APP_NAME, AUTHOR
@@ -56,6 +56,6 @@ def setup_django() -> None:
 
     django.setup()
 
-    call_command("migrate")
+    migrate_safely(db_path)
 
     logger.info("Django setup complete")
