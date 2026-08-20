@@ -19,6 +19,10 @@ class ReleaseWorkflowConfigFile(
 ):
     """You can override methods from the base class to customize behavior."""
 
-    def resource_modules(self) -> Iterable[ModuleType]:
+    def collect_data_modules(self) -> Iterable[ModuleType]:
         """Additional resources."""
-        return (*super().resource_modules(), resources, migrations)
+        return (*super().collect_data_modules(), resources)
+
+    def collect_all_modules(self) -> Iterable[ModuleType]:
+        """Additional resources."""
+        return (*super().collect_all_modules(), migrations)

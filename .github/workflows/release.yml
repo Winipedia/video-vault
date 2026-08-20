@@ -68,9 +68,9 @@
           --onefile \
           --name=video-vault-${{ runner.os }} \
           --icon=src/video_vault/rig/resources/icon.png \
+          --collect-all=video_vault.core.db.migrations \
           --collect-data=video_vault.rig.resources \
           --collect-data=winipyside.rig.resources \
-          --collect-data=video_vault.core.db.migrations \
           src/video_vault/main.py
       -
         "name": "Upload Executable"

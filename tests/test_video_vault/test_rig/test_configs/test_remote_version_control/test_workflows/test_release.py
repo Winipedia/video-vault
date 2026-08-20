@@ -12,10 +12,13 @@ from video_vault.rig.configs.remote_version_control.workflows.release import (
 class TestReleaseWorkflowConfigFile:
     """Test class."""
 
-    def test_resource_modules(self) -> None:
+    def test_collect_data_modules(self) -> None:
         """Test method."""
-        assert ReleaseWorkflowConfigFile.I.resource_modules() == (
+        assert ReleaseWorkflowConfigFile.I.collect_data_modules() == (
             video_vault_resources,
             winipyside_resources,
-            migrations,
         )
+
+    def test_collect_all_modules(self) -> None:
+        """Test method."""
+        assert ReleaseWorkflowConfigFile.I.collect_all_modules() == (migrations,)

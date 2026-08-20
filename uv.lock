@@ -965,16 +965,16 @@ wheels = [
 
 [[package]]
 name = "pyrig-executables"
-version = "3.14.46"
+version = "3.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pyrig" },
     { name = "pyrig-resources" },
     { name = "pyrig-runtime" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cd/09/ca431a6132999999a43f2a3e264ac834ef48abccab9ba52d4c55eef4eaf4/pyrig_executables-3.14.46.tar.gz", hash = "sha256:814cd5ec5c705c38fe697a1489b39c9e0b09fd06e5a576d8054f471c8213e4c2", size = 14581, upload-time = "2026-08-19T09:38:49.843Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2e/eb/2d98aee4c21c7dab60f6dd0bf5d8808e9a2e39939cc28b370ad652c53e8e/pyrig_executables-3.15.0.tar.gz", hash = "sha256:db1812420dd8a4f17e41e0bc28b7ab0b855bf34f41b02a88a6055d47690029cf", size = 14877, upload-time = "2026-08-20T13:12:46.386Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/53/78/1d89f9d427f27fffcadd2af1041a785147269fcf7bb878eebe00f2fd60af/pyrig_executables-3.14.46-py3-none-any.whl", hash = "sha256:1bbd03348e77f1673eb82310cd05730f1c5ce58e2c614d6f85c7e524f73d6c79", size = 21498, upload-time = "2026-08-19T09:38:48.792Z" },
+    { url = "https://files.pythonhosted.org/packages/ef/6f/ba6325ff05ba92b4ea820643f9e5c7afa82f6474e86e4792c0ba6848855d/pyrig_executables-3.15.0-py3-none-any.whl", hash = "sha256:1402ca55117087abcd3c38a375a777f5ed9ec4882018eecb79cd4d666fe72773", size = 21783, upload-time = "2026-08-20T13:12:45.415Z" },
 ]
 
 [[package]]
@@ -1639,7 +1639,7 @@ wheels = [
 
 [[package]]
 name = "video-vault"
-version = "2.16.0"
+version = "2.17.0"
 source = { editable = "." }
 dependencies = [
     { name = "cryptography" },
