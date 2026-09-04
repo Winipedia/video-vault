@@ -2,7 +2,7 @@
 
 <!-- project-status -->
 [![CI](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/health_check.yml?label=CI&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/health_check.yml)
-[![CD](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/deploy.yml?label=CD&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/deploy.yml)
+[![CD](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/release.yml?label=CD&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/release.yml)
 [![ProjectTester](https://img.shields.io/badge/coverage->=50%25-hsl(60,80%25,45%25)?logo=codecov&logoColor=white)](https://pytest.org)
 <!-- code-quality -->
 [![ByteOrderMarkerFormatter](https://img.shields.io/badge/BOM-fix--byte--order--marker-orange)](https://github.com/pre-commit/pre-commit-hooks)
