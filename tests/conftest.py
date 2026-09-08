@@ -31,7 +31,7 @@ from winiutils.core.security import keyring as winiutils_keyring
 
 def pytest_configure() -> None:
     """Isolate video_vault's app data dir and keyring before it is imported."""
-    assert winiutils_keyring
+    assert winiutils_keyring.__name__
     test_data_dir = Path(tempfile.mkdtemp(prefix="video_vault_test_"))
 
     platformdirs.user_data_dir = lambda *_args, **_kwargs: str(test_data_dir)  # ty: ignore[invalid-assignment]

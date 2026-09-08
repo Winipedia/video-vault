@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.17.17"
+version = "2.17.21"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -39,6 +39,7 @@ video-vault = "pyrig_runtime.rig.cli.main:main"
 
 [dependency-groups]
 dev = [
+  "actionlint-py>=1.7.12.24",
   "bandit>=1.9.4",
   "deptry>=0.25.1",
   "detect-secrets>=1.5.0",
@@ -47,6 +48,7 @@ dev = [
   "pillow>=12.3.0",
   "pre-commit-hooks",
   "prek>=0.4.8",
+  "pyflakes>=3.4.0",
   "pyinstaller>=6.21.0",
   "pyrig>=18.3.4",
   "pyrig-executables>=3.1.2",
@@ -69,6 +71,7 @@ dev = [
   "typos>=1.48.0",
   "yt-dlp-types>=0.0.18",
   "zensical>=0.0.52",
+  "zizmor>=1.30.0",
 ]
 
 [build-system]
