@@ -3,6 +3,22 @@ set -euo pipefail
 
 repo="Winipedia/video-vault"
 
+dependency_alerts() {
+  gh api "repos/${repo}/vulnerability-alerts" --method=PUT
+}
+
+dependency_security_updates() {
+  gh api "repos/${repo}/automated-security-fixes" --method=PUT
+}
+
+fork_pr_contributor_approval() {
+  jq '.fork_pr_contributor_approval' .github/settings.json | gh api "repos/${repo}/actions/permissions/fork-pr-contributor-approval" --method=PUT --input=-
+}
+
+release_immutability() {
+  gh api "repos/${repo}/immutable-releases" --method=PUT
+}
+
 repository() {
   jq '.repository' .github/settings.json | gh api "repos/${repo}" --method=PATCH --input=-
 }
@@ -20,14 +36,6 @@ rulesets() {
 
 vulnerability_reporting() {
   gh api "repos/${repo}/private-vulnerability-reporting" --method=PUT
-}
-
-release_immutability() {
-  gh api "repos/${repo}/immutable-releases" --method=PUT
-}
-
-fork_pr_contributor_approval() {
-  jq '.fork_pr_contributor_approval' .github/settings.json | gh api "repos/${repo}/actions/permissions/fork-pr-contributor-approval" --method=PUT --input=-
 }
 
 for step in $(declare -F | awk '{print $3}'); do
