@@ -1,6 +1,6 @@
 """Override pyrig tools."""
 
-from pyrig.rig.tools.testing.project import (  # deptry: ignore[DEP004]
+from pyrig.rig.tools.testing.project import (  # deptry: ignore[DEP003, DEP004]
     ProjectTester as BaseProjectTester,
 )
 
