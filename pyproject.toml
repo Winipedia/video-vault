@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.17.80"
+version = "2.17.83"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -19,11 +19,11 @@ dependencies = [
   "django>=6.1.2",
   "imageio-ffmpeg>=0.6.0",
   "platformdirs>=4.13.0",
-  "pyrig-runtime>=3.25.0",
+  "pyrig-runtime>=3.26.0",
   "pyside6>=6.12.0",
-  "winidjango>=4.15.79",
-  "winipyside>=4.14.121",
-  "winiutils>=4.14.117",
+  "winidjango>=4.15.82",
+  "winipyside>=4.14.124",
+  "winiutils>=4.14.120",
   "yt-dlp>=2026.8.19",
 ]
 
