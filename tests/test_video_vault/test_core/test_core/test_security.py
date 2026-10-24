@@ -9,26 +9,6 @@ from video_vault.core.core.consts import APP_NAME, AUTHOR
 from video_vault.core.core.security import get_app_key_as_str, get_or_create_app_aes_gcm
 
 
-def test_get_or_create_app_aes_gcm(mocker: MockerFixture) -> None:
-    """Test func for get_or_create_app_aes_gcm."""
-    # Mock the winiutils function
-    mock_get_or_create_aes_gcm = mocker.patch(
-        security_module.__name__ + ".get_or_create_aes_gcm",
-    )
-    mock_aes_gcm = mocker.Mock(spec=AESGCM)
-    # Return a tuple since the code accesses [0]
-    mock_get_or_create_aes_gcm.return_value = (mock_aes_gcm, "mock_key")
-
-    # Test the function
-    result = get_or_create_app_aes_gcm()
-
-    # Verify it calls the utility function with correct parameters
-    mock_get_or_create_aes_gcm.assert_called_once_with(APP_NAME, AUTHOR)
-
-    # Verify it returns the AESGCM instance
-    assert result is mock_aes_gcm, "Should return the AESGCM instance"
-
-
 def test_get_app_key_as_str(mocker: MockerFixture) -> None:
     """Test func for get_app_key_as_str."""
     # Mock dependencies
@@ -65,3 +45,23 @@ def test_get_app_key_as_str(mocker: MockerFixture) -> None:
     assert mock_get_key_as_str.call_count == expected_call_count, (
         f"Should call get_key_as_str {expected_call_count} times"
     )
+
+
+def test_get_or_create_app_aes_gcm(mocker: MockerFixture) -> None:
+    """Test func for get_or_create_app_aes_gcm."""
+    # Mock the winiutils function
+    mock_get_or_create_aes_gcm = mocker.patch(
+        security_module.__name__ + ".get_or_create_aes_gcm",
+    )
+    mock_aes_gcm = mocker.Mock(spec=AESGCM)
+    # Return a tuple since the code accesses [0]
+    mock_get_or_create_aes_gcm.return_value = (mock_aes_gcm, "mock_key")
+
+    # Test the function
+    result = get_or_create_app_aes_gcm()
+
+    # Verify it calls the utility function with correct parameters
+    mock_get_or_create_aes_gcm.assert_called_once_with(APP_NAME, AUTHOR)
+
+    # Verify it returns the AESGCM instance
+    assert result is mock_aes_gcm, "Should return the AESGCM instance"

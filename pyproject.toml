@@ -1,6 +1,6 @@
 [project]
 name = "video-vault"
-version = "2.18.6"
+version = "2.18.14"
 description = "An application to download any video"
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
@@ -50,6 +50,7 @@ dev = [
   "prek>=0.5.5",
   "pyflakes>=4.0.3",
   "pyinstaller>=6.22.3",
+  "pyorder>=0.5.2",
   "pyrig-codeql>=1.2.0",
   "pyrig-executables>=3.20.0",
   "pyrig-public>=1.2.0",

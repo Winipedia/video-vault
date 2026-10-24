@@ -9,14 +9,6 @@ from winiutils.core.security.keyring import get_key_as_str, get_or_create_aes_gc
 from video_vault.core.core.consts import APP_NAME, AUTHOR
 
 
-def get_or_create_app_aes_gcm() -> AESGCM:
-    """Get the app secret using keyring.
-
-    If it does not exist, create it with a AESGCM.
-    """
-    return get_or_create_aes_gcm(APP_NAME, AUTHOR)[0]
-
-
 def get_app_key_as_str() -> str:
     """Get the key as a string."""
     get_or_create_aes_gcm(APP_NAME, AUTHOR)
@@ -25,3 +17,11 @@ def get_app_key_as_str() -> str:
         msg = "Key not found"
         raise ValueError(msg)
     return key
+
+
+def get_or_create_app_aes_gcm() -> AESGCM:
+    """Get the app secret using keyring.
+
+    If it does not exist, create it with a AESGCM.
+    """
+    return get_or_create_aes_gcm(APP_NAME, AUTHOR)[0]
