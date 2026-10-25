@@ -20,47 +20,6 @@ from video_vault.core.db.models import File
 logger = logging.getLogger(__name__)
 
 
-def add_download(url: str, cookies: list[Cookie]) -> File:
-    """Add a download."""
-    with tempfile.TemporaryDirectory() as tempdir:
-        path = do_download(tempdir, url, cookies)
-        return save_download(path)
-
-
-def do_download(tempdir: str, url: str, cookies: list[Cookie]) -> Path:
-    """Add a download."""
-    logger.info("Adding download: %s", url)
-
-    # make ydl options so we don not write to file
-    ffmpeg_path = get_ffmpeg_path()
-    ydl_opts = {
-        "paths": {"home": tempdir},
-        "cookies": cookies,
-        "ffmpeg_location": str(ffmpeg_path) if ffmpeg_path is not None else None,
-        "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
-        "merge_output_format": "mp4",
-        "postprocessors": [
-            {
-                "key": "FFmpegVideoConvertor",
-                "preferedformat": "mp4",
-            },
-        ],
-    }
-    try:
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:  # ty:ignore[invalid-argument-type]
-            info = ydl.extract_info(url, download=True)
-    except Exception as e:
-        msg = f"Download failed: {e}"
-        raise DownloadError(msg) from e
-
-    return Path(ydl.prepare_filename(info))
-
-
-def save_download(path: Path) -> File:
-    """Save a download encrypted to disk."""
-    return File.create_encrypted(path)
-
-
 class DownloadWorker(QThread):
     """Worker to download a video."""
 
@@ -113,3 +72,44 @@ class DownloadWorker(QThread):
 
         downloads_page = DownloadsPage.get_page_static(DownloadsPage)
         downloads_page.add_download_button(self.file)
+
+
+def add_download(url: str, cookies: list[Cookie]) -> File:
+    """Add a download."""
+    with tempfile.TemporaryDirectory() as tempdir:
+        path = do_download(tempdir, url, cookies)
+        return save_download(path)
+
+
+def do_download(tempdir: str, url: str, cookies: list[Cookie]) -> Path:
+    """Add a download."""
+    logger.info("Adding download: %s", url)
+
+    # make ydl options so we don not write to file
+    ffmpeg_path = get_ffmpeg_path()
+    ydl_opts = {
+        "paths": {"home": tempdir},
+        "cookies": cookies,
+        "ffmpeg_location": str(ffmpeg_path) if ffmpeg_path is not None else None,
+        "format": "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]",
+        "merge_output_format": "mp4",
+        "postprocessors": [
+            {
+                "key": "FFmpegVideoConvertor",
+                "preferedformat": "mp4",
+            },
+        ],
+    }
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:  # ty:ignore[invalid-argument-type]
+            info = ydl.extract_info(url, download=True)
+    except Exception as e:
+        msg = f"Download failed: {e}"
+        raise DownloadError(msg) from e
+
+    return Path(ydl.prepare_filename(info))
+
+
+def save_download(path: Path) -> File:
+    """Save a download encrypted to disk."""
+    return File.create_encrypted(path)
