@@ -5,6 +5,7 @@ All subclasses of ConfigFile in the configs package are automatically called.
 
 from collections.abc import Iterable
 from types import ModuleType
+from typing import override
 
 from pyrig_executables.rig.configs.version_control.remote.workflows.release import (  # deptry: ignore[DEP004]  # noqa: E501
     ReleaseWorkflowConfigFile as BaseReleaseWorkflowConfigFile,
@@ -19,10 +20,12 @@ class ReleaseWorkflowConfigFile(
 ):
     """You can override methods from the base class to customize behavior."""
 
-    def collect_data_modules(self) -> Iterable[ModuleType]:
-        """Additional resources."""
-        return (*super().collect_data_modules(), resources)
-
+    @override
     def collect_all_modules(self) -> Iterable[ModuleType]:
         """Additional resources."""
         return (*super().collect_all_modules(), migrations)
+
+    @override
+    def collect_data_modules(self) -> Iterable[ModuleType]:
+        """Additional resources."""
+        return (*super().collect_data_modules(), resources)

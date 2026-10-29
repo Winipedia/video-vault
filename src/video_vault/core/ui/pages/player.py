@@ -4,6 +4,7 @@ This module contains the player page class for the VideoVault application.
 """
 
 from pathlib import Path
+from typing import override
 
 from winipyside.core.ui.pages.player import Player as PlayerPage
 
@@ -14,12 +15,20 @@ from video_vault.core.db.models import File
 class Player(PlayerPage):
     """Player page for the VideoVault application."""
 
-    def pre_setup(self) -> None:
-        """Setup the UI."""
-
+    @override
     def post_setup(self) -> None:
         """Setup the UI."""
         self.current_file: File | None = None
+
+    @override
+    def pre_setup(self) -> None:
+        """Setup the UI."""
+
+    @override
+    def start_playback(self, path: Path, position: int = 0) -> None:
+        """Start playback."""
+        aes_gcm = get_or_create_app_aes_gcm()
+        self.play_encrypted_file(path, aes_gcm, position)
 
     def play_download(self, download: File) -> None:
         """Play the video."""
@@ -27,11 +36,6 @@ class Player(PlayerPage):
         download.refresh_from_db()
         self.current_file = download
         self.start_playback(Path(download.file.path), download.last_position)
-
-    def start_playback(self, path: Path, position: int = 0) -> None:
-        """Start playback."""
-        aes_gcm = get_or_create_app_aes_gcm()
-        self.play_encrypted_file(path, aes_gcm, position)
 
     def stop_playback(self) -> None:
         """Stop playback."""

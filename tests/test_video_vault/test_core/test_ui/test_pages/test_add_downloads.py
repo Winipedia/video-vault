@@ -9,29 +9,6 @@ from video_vault.core.ui.pages.add_downloads import AddDownloads
 class TestAddDownloads:
     """Test class for AddDownloads."""
 
-    def test_pre_setup(self, mocker: MockerFixture) -> None:
-        """Test method for pre_setup."""
-        # Mock the add_download_button method to verify it's called
-        mock_add_download_button = mocker.patch.object(
-            AddDownloads,
-            "add_download_button",
-        )
-
-        # Create a mock instance and call pre_setup
-        page = AddDownloads.__new__(AddDownloads)  # Create without calling __init__
-        page.pre_setup()
-
-        # Verify add_download_button was called
-        mock_add_download_button.assert_called_once()
-
-    def test_post_setup(self) -> None:
-        """Test method for post_setup."""
-        # Create a mock instance and call post_setup
-        page = AddDownloads.__new__(AddDownloads)  # Create without calling __init__
-        page.post_setup()
-
-        # Since post_setup is empty, just verify it completed without error
-
     def test_add_download_button(self, mocker: MockerFixture) -> None:
         """Test method for add_download_button."""
         # Mock the UI methods to avoid Qt widget creation
@@ -95,3 +72,26 @@ class TestAddDownloads:
 
         # Verify worker was started
         mock_worker_instance.start.assert_called_once()
+
+        # Since post_setup is empty, just verify it completed without error
+
+    def test_post_setup(self) -> None:
+        """Test method for post_setup."""
+        # Create a mock instance and call post_setup
+        page = AddDownloads.__new__(AddDownloads)  # Create without calling __init__
+        page.post_setup()
+
+    def test_pre_setup(self, mocker: MockerFixture) -> None:
+        """Test method for pre_setup."""
+        # Mock the add_download_button method to verify it's called
+        mock_add_download_button = mocker.patch.object(
+            AddDownloads,
+            "add_download_button",
+        )
+
+        # Create a mock instance and call pre_setup
+        page = AddDownloads.__new__(AddDownloads)  # Create without calling __init__
+        page.pre_setup()
+
+        # Verify add_download_button was called
+        mock_add_download_button.assert_called_once()

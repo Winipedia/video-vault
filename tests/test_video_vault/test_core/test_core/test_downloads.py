@@ -103,25 +103,6 @@ class TestDownloadWorker:
             "Worker should be added to ALL_WORKERS"
         )
 
-    def test_run(self, mocker: MockerFixture) -> None:
-        """Test method for run."""
-        test_url = "https://www.youtube.com/watch?v=805SIqgDZIE"
-        cookies: list[Cookie] = []
-
-        # Mock only the download function, not Qt components
-        mock_add_download = mocker.patch(downloads_module.__name__ + ".add_download")
-        mock_file = mocker.Mock()
-        mock_file.display_name = "Test Video"
-        mock_add_download.return_value = mock_file
-
-        worker = DownloadWorker(test_url, cookies)
-        worker.run()
-
-        assert worker.file == mock_file, "File should be set"
-        assert worker.name == "Test Video", "Name should be set from file display_name"
-        assert worker.successful is True, "Should be marked as successful"
-        assert worker.error is None, "Error should be None on success"
-
     def test_on_finished(self, mocker: MockerFixture) -> None:
         """Test method for on_finished."""
         test_url = "https://www.youtube.com/watch?v=805SIqgDZIE"
@@ -144,6 +125,25 @@ class TestDownloadWorker:
         assert len(DownloadWorker.ALL_WORKERS) == initial_worker_count - 1, (
             "Worker should be removed from ALL_WORKERS"
         )
+
+    def test_run(self, mocker: MockerFixture) -> None:
+        """Test method for run."""
+        test_url = "https://www.youtube.com/watch?v=805SIqgDZIE"
+        cookies: list[Cookie] = []
+
+        # Mock only the download function, not Qt components
+        mock_add_download = mocker.patch(downloads_module.__name__ + ".add_download")
+        mock_file = mocker.Mock()
+        mock_file.display_name = "Test Video"
+        mock_add_download.return_value = mock_file
+
+        worker = DownloadWorker(test_url, cookies)
+        worker.run()
+
+        assert worker.file == mock_file, "File should be set"
+        assert worker.name == "Test Video", "Name should be set from file display_name"
+        assert worker.successful is True, "Should be marked as successful"
+        assert worker.error is None, "Error should be None on success"
 
     def test_show_notification(self, mocker: MockerFixture) -> None:
         """Test method for show_notification."""

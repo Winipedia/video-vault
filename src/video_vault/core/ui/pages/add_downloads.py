@@ -3,6 +3,8 @@
 This module contains the add downloads page class for the VideoVault application.
 """
 
+from typing import override
+
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QPushButton,
@@ -16,13 +18,15 @@ from video_vault.core.core.downloads import DownloadWorker
 class AddDownloads(BrowserPage):
     """Add downloads page for the VideoVault application."""
 
+    @override
+    def post_setup(self) -> None:
+        """Setup the UI."""
+
+    @override
     def pre_setup(self) -> None:
         """Setup the UI."""
         # add a download button in the top right
         self.add_download_button()
-
-    def post_setup(self) -> None:
-        """Setup the UI."""
 
     def add_download_button(self) -> None:
         """Add a download button."""

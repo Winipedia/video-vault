@@ -11,23 +11,6 @@ from video_vault.core.ui.pages.player import Player
 class TestPlayer:
     """Test class for Player."""
 
-    def test_pre_setup(self) -> None:
-        """Test method for pre_setup."""
-        # Create a mock instance and call pre_setup
-        player = Player.__new__(Player)  # Create without calling __init__
-        player.pre_setup()
-
-        # Since pre_setup is empty, just verify it completed without error
-
-    def test_post_setup(self) -> None:
-        """Test method for post_setup."""
-        # Create a mock instance and call post_setup
-        player = Player.__new__(Player)  # Create without calling __init__
-        player.post_setup()
-
-        # Verify current_file was set to None
-        assert player.current_file is None, "current_file should be set to None"
-
     def test_play_download(self, mocker: MockerFixture) -> None:
         """Test method for play_download."""
         # Create a mock instance
@@ -58,6 +41,8 @@ class TestPlayer:
 
         # Verify start_playback was called with correct parameters
         mock_start_playback.assert_called_once_with(Path("/fake/path/video.mp4"), 1500)
+
+        # Since pre_setup is empty, just verify it completed without error
 
     def test_play_download_with_existing_file(self, mocker: MockerFixture) -> None:
         """Test method for play_download when there's already a current file."""
@@ -100,6 +85,21 @@ class TestPlayer:
             Path("/fake/path/new_video.mp4"),
             1000,
         )
+
+    def test_post_setup(self) -> None:
+        """Test method for post_setup."""
+        # Create a mock instance and call post_setup
+        player = Player.__new__(Player)  # Create without calling __init__
+        player.post_setup()
+
+        # Verify current_file was set to None
+        assert player.current_file is None, "current_file should be set to None"
+
+    def test_pre_setup(self) -> None:
+        """Test method for pre_setup."""
+        # Create a mock instance and call pre_setup
+        player = Player.__new__(Player)  # Create without calling __init__
+        player.pre_setup()
 
     def test_start_playback(self, mocker: MockerFixture) -> None:
         """Test method for start_playback."""

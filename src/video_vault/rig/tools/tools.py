@@ -1,5 +1,7 @@
 """Override pyrig tools."""
 
+from typing import override
+
 from pyrig.rig.tools.testing.project import (  # deptry: ignore[DEP003, DEP004]
     ProjectTester as BaseProjectTester,
 )
@@ -8,6 +10,7 @@ from pyrig.rig.tools.testing.project import (  # deptry: ignore[DEP003, DEP004]
 class ProjectTester(BaseProjectTester):
     """ProjectTester class for video_vault."""
 
+    @override
     def threshold(self) -> int:
         """Override the threshold method to set a custom coverage threshold."""
         return 50

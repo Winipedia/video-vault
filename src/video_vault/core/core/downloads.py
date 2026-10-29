@@ -7,7 +7,7 @@ import logging
 import tempfile
 from http.cookiejar import Cookie
 from pathlib import Path
-from typing import ClassVar
+from typing import ClassVar, override
 
 import yt_dlp
 from PySide6.QtCore import QThread
@@ -33,6 +33,7 @@ class DownloadWorker(QThread):
         self.cookies = cookies
         self.finished.connect(self.on_finished)
 
+    @override
     def run(self) -> None:
         """Run the worker."""
         try:

@@ -11,6 +11,32 @@ class TestFile:
     """Test class for File."""
 
     @pytest.mark.django_db
+    def test_create_encrypted(self, tmp_path: Path) -> None:
+        """Test method for create_encrypted."""
+        # Create a test file
+        test_file = tmp_path / "test_video.mp4"
+        test_content = b"fake video content for testing"
+        test_file.write_bytes(test_content)
+
+        # Create encrypted file
+        result = File.create_encrypted(test_file)
+
+        # Verify the file was created
+        assert result.file.name != "", "File should have a name"
+        assert result.file.size > 0, "File should have content"
+        assert result.last_position == 0, "Default last_position should be 0"
+
+        # Verify file exists in database
+        assert File.objects.filter(pk=result.pk).exists(), (
+            "File should exist in database"
+        )
+
+        # Verify the file is encrypted (content should be different from original)
+        with result.file.open("rb") as f:
+            encrypted_content = f.read()
+        assert encrypted_content != test_content, "File content should be encrypted"
+
+    @pytest.mark.django_db
     def test_delete_file(self, tmp_path: Path) -> None:
         """Test method for delete_file."""
         # Create a test file
@@ -36,32 +62,6 @@ class TestFile:
             "File should be deleted from database"
         )
         assert result[0] == 1, "Should delete exactly one record"
-
-    @pytest.mark.django_db
-    def test_create_encrypted(self, tmp_path: Path) -> None:
-        """Test method for create_encrypted."""
-        # Create a test file
-        test_file = tmp_path / "test_video.mp4"
-        test_content = b"fake video content for testing"
-        test_file.write_bytes(test_content)
-
-        # Create encrypted file
-        result = File.create_encrypted(test_file)
-
-        # Verify the file was created
-        assert result.file.name != "", "File should have a name"
-        assert result.file.size > 0, "File should have content"
-        assert result.last_position == 0, "Default last_position should be 0"
-
-        # Verify file exists in database
-        assert File.objects.filter(pk=result.pk).exists(), (
-            "File should exist in database"
-        )
-
-        # Verify the file is encrypted (content should be different from original)
-        with result.file.open("rb") as f:
-            encrypted_content = f.read()
-        assert encrypted_content != test_content, "File content should be encrypted"
 
     @pytest.mark.django_db
     def test_display_name(self, tmp_path: Path) -> None:

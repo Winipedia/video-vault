@@ -46,6 +46,12 @@ class TestVideoVault:
             "Should return DownloadsPage as start page class"
         )
 
+    def test_post_setup(self) -> None:
+        """Test method for post_setup."""
+        # Create a mock instance and call post_setup
+        window = VideoVault.__new__(VideoVault)  # Create without calling __init__
+        window.post_setup()
+
     def test_pre_setup(self, mocker: MockerFixture) -> None:
         """Test method for pre_setup."""
         # Create a mock instance and call pre_setup
@@ -64,18 +70,12 @@ class TestVideoVault:
         mock_get_svg_icon.assert_called_once_with("play_icon")
         mock_set_window_icon.assert_called_once_with(mock_play_icon)
 
+        # Since setup is empty, just verify it completed without error
+
     def test_setup(self) -> None:
         """Test method for setup."""
         # Create a mock instance and call setup
         window = VideoVault.__new__(VideoVault)  # Create without calling __init__
         window.setup()
-
-        # Since setup is empty, just verify it completed without error
-
-    def test_post_setup(self) -> None:
-        """Test method for post_setup."""
-        # Create a mock instance and call post_setup
-        window = VideoVault.__new__(VideoVault)  # Create without calling __init__
-        window.post_setup()
 
         # Since post_setup is empty, just verify it completed without error

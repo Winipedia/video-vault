@@ -5,6 +5,7 @@ This module contains the downloads page class for the VideoVault application.
 
 from functools import partial
 from pathlib import Path
+from typing import override
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
@@ -26,40 +27,21 @@ from video_vault.core.ui.pages.player import Player as PlayerPage
 class Downloads(BasePage):
     """Downloads page for the VideoVault application."""
 
+    @override
+    def post_setup(self) -> None:
+        """Setup the UI."""
+
+    @override
     def pre_setup(self) -> None:
         """Setup the UI."""
 
+    @override
     def setup(self) -> None:
         """Setup the UI."""
         # add button in the top right to add a download
         self.add_delete_all_downloads_button()
         self.add_add_downloads_button()
         self.add_download_buttons_scroll_area()
-
-    def post_setup(self) -> None:
-        """Setup the UI."""
-
-    def add_delete_all_downloads_button(self) -> None:
-        """Add a button to delete all downloads."""
-        button = QPushButton("Delete All")
-        button.clicked.connect(self.on_delete_all_downloads)
-        self.h_layout.addWidget(button)
-        # align to be in center
-        self.h_layout.setAlignment(
-            button,
-            Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignTop,
-        )
-        # icon
-        button.setIcon(self.get_svg_icon("delete_garbage_can"))
-        # we need the button to be small
-        button.setSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-    def on_delete_all_downloads(self) -> None:
-        """Delete all downloads."""
-        download_to_button = reverse_dict(self.button_to_download)
-        for download in File.objects.all():
-            button = download_to_button[download]
-            self.remove_download_and_button(button)
 
     def add_add_downloads_button(self) -> None:
         """Add a button to add a download."""
@@ -77,6 +59,21 @@ class Downloads(BasePage):
             button,
             Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignTop,
         )
+
+    def add_delete_all_downloads_button(self) -> None:
+        """Add a button to delete all downloads."""
+        button = QPushButton("Delete All")
+        button.clicked.connect(self.on_delete_all_downloads)
+        self.h_layout.addWidget(button)
+        # align to be in center
+        self.h_layout.setAlignment(
+            button,
+            Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignTop,
+        )
+        # icon
+        button.setIcon(self.get_svg_icon("delete_garbage_can"))
+        # we need the button to be small
+        button.setSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
     def add_download_buttons_scroll_area(self) -> None:
         """Add a list of downloads to scroll through and on click the video plays."""
@@ -100,20 +97,6 @@ class Downloads(BasePage):
         # Add the scroll area to the main layout
         self.v_layout.addWidget(scroll_area)
 
-    def play_download(self, download: File) -> None:
-        """Play the video."""
-        download.refresh_from_db()
-
-        player_page = self.get_page(PlayerPage)
-
-        # if already a video is playing then save its position
-        if player_page.current_file is not None:
-            player_page.current_file.last_position = player_page.media_player.position()
-            player_page.current_file.save()
-        player_page.current_file = download
-
-        player_page.start_playback(Path(download.file.path), download.last_position)
-
     def add_download_button(self, download: File) -> None:
         """Add a download to the list."""
         # check if display name
@@ -134,6 +117,27 @@ class Downloads(BasePage):
         )
 
         button.setMenu(menu)
+
+    def on_delete_all_downloads(self) -> None:
+        """Delete all downloads."""
+        download_to_button = reverse_dict(self.button_to_download)
+        for download in File.objects.all():
+            button = download_to_button[download]
+            self.remove_download_and_button(button)
+
+    def play_download(self, download: File) -> None:
+        """Play the video."""
+        download.refresh_from_db()
+
+        player_page = self.get_page(PlayerPage)
+
+        # if already a video is playing then save its position
+        if player_page.current_file is not None:
+            player_page.current_file.last_position = player_page.media_player.position()
+            player_page.current_file.save()
+        player_page.current_file = download
+
+        player_page.start_playback(Path(download.file.path), download.last_position)
 
     def remove_download_and_button(self, download_button: QPushButton) -> None:
         """Remove a download from the list."""
