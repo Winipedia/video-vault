@@ -1,7 +1,7 @@
 # Home
 
 <!-- project-status -->
-[![CI](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/health_check.yml?label=CI&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/health_check.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/health-check.yml?label=CI&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/health-check.yml)
 [![CD](https://img.shields.io/github/actions/workflow/status/Winipedia/video-vault/release.yml?label=CD&logo=github)](https://github.com/Winipedia/video-vault/actions/workflows/release.yml)
 [![ProjectTester](https://img.shields.io/badge/coverage-%3E%3D50%25-hsl(60,80%25,45%25)?logo=codecov&logoColor=white)](https://pytest.org)
 <!-- code-quality -->
