@@ -990,7 +990,7 @@ wheels = [
 
 [[package]]
 name = "pyrig"
-version = "19.22.0"
+version = "19.22.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "inquirerpy" },
@@ -1001,9 +1001,9 @@ dependencies = [
     { name = "tomli-w" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a9/09/8c5218a087cd8d72a09e040ed089791afb5b174fb64f8bf9c505f292ac38/pyrig-19.22.0.tar.gz", hash = "sha256:0577844c1f13a481f4be5fd480a37aed4ac97ca4f8c889344b432525ee9f9619", size = 114057, upload-time = "2026-11-08T23:51:35.676Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d3/ee/8baacbc891ba765ae6e7df82df2228d6ef9cecb59a0604df25386c437549/pyrig-19.22.7.tar.gz", hash = "sha256:85896797c5561cc1576aceb589576cbbcd5b68b01266bacf822d2626b980d2ca", size = 113892, upload-time = "2026-11-09T01:33:16.378Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/3e/d7/b71160f545fe9b0f6e57644d48ca0437fc0c8814d178726c92dea74ea588/pyrig-19.22.0-py3-none-any.whl", hash = "sha256:0c521e09496f116d1435281eec36e0697e0a3796b8eb33f305e8e2843f7e9f6b", size = 173018, upload-time = "2026-11-08T23:51:32.449Z" },
+    { url = "https://files.pythonhosted.org/packages/53/76/cab07491392a52c7c210b13bb2a7fd1f49e4b7d43f28a14972cf48c80a58/pyrig-19.22.7-py3-none-any.whl", hash = "sha256:d45a0c297addddcc79fe2f20385d32e6cfcd07739ac57cdab5cd6a4030fff115", size = 172814, upload-time = "2026-11-09T01:33:14.655Z" },
 ]
 
 [[package]]
@@ -1698,7 +1698,7 @@ wheels = [
 
 [[package]]
 name = "video-vault"
-version = "2.18.69"
+version = "2.18.70"
 source = { editable = "." }
 dependencies = [
     { name = "cryptography" },
@@ -1872,7 +1872,7 @@ wheels = [
 
 [[package]]
 name = "winidjango"
-version = "4.16.56"
+version = "4.16.65"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "django" },
@@ -1883,14 +1883,14 @@ dependencies = [
     { name = "pyrig-runtime" },
     { name = "winiutils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/01/52/a1f09f4dfee3044cafb1278f3fe1ec1164c51ac5545a5550e6e187e3bb4d/winidjango-4.16.56.tar.gz", hash = "sha256:16baef497a7aa07771e0ec8f8fa451bb8b2041a02f16b8d01d0a02cf835ee84a", size = 21578, upload-time = "2026-11-08T00:25:54.354Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9f/2d/42c889b68a42f9e3084c1942b70a060756798d56220b4f107cfca8924e6b/winidjango-4.16.65.tar.gz", hash = "sha256:44e7cab3ef94052d7439431cc4e7dbe22c1d8dacc01edcf522c2a8f42c77c5cf", size = 21627, upload-time = "2026-11-09T01:42:12.898Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cd/48/a2257974de9450a3ef44d5472329a3b1e2bb49898803d71cff052e1e04f4/winidjango-4.16.56-py3-none-any.whl", hash = "sha256:93b2acadbab0f44361511e90d31b34e54ef0512f21209f0aad7f347696b59fc1", size = 26393, upload-time = "2026-11-08T00:25:53.186Z" },
+    { url = "https://files.pythonhosted.org/packages/57/c6/28434122f7ae712408011cb7fd392189edaa3f42c93bc3652195a2558625/winidjango-4.16.65-py3-none-any.whl", hash = "sha256:58ca43dda40306fa5b06f06e9557c8628a08d63d4b7d89add529a02710b185f7", size = 26433, upload-time = "2026-11-09T01:42:11.851Z" },
 ]
 
 [[package]]
 name = "winipyside"
-version = "4.15.58"
+version = "4.15.67"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
@@ -1900,14 +1900,14 @@ dependencies = [
     { name = "pyside6" },
     { name = "winiutils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6e/0b/b55dbad529badcfc54c98fd917150e459a0dd686d6bf2c2a22794df3faa9/winipyside-4.15.58.tar.gz", hash = "sha256:d6492a533a9d739f9695a46c24f8d4b9293f0723356b1738d66227b5d4e12209", size = 32216, upload-time = "2026-11-08T00:26:55.024Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2d/cd/09b0f49a6e99444b79df52ed07f626e04e59810722defadc24fddea90f8a/winipyside-4.15.67.tar.gz", hash = "sha256:fe35a0e64a437296c5325ff0b9810bcf9416311e7e718c8143b5bdcdca9a95ac", size = 32260, upload-time = "2026-11-09T01:42:19.989Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/99/fa/10afb1cced37331779d0c97c1c95b8a5b6aff50dfe87660670366e3f1a9d/winipyside-4.15.58-py3-none-any.whl", hash = "sha256:2a168157ee7a3376c05694a52bf0250708e54c8186e74ade9b19f53e9cad6273", size = 41979, upload-time = "2026-11-08T00:26:54.01Z" },
+    { url = "https://files.pythonhosted.org/packages/7e/b0/0d32697a608c5af86a27c4aa848ca5aef4fa87c0f3586568cd66afa35ba4/winipyside-4.15.67-py3-none-any.whl", hash = "sha256:2b6de9ec47482f868c62bfbc20b276ad63dda65f8c1681b4b8da7983566ae6ff", size = 42029, upload-time = "2026-11-09T01:42:18.821Z" },
 ]
 
 [[package]]
 name = "winiutils"
-version = "4.15.56"
+version = "4.15.65"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
@@ -1918,9 +1918,9 @@ dependencies = [
     { name = "pyrig-runtime" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2a/8e/7d510b1f55ffd2fd9b10994147e29ba444c9012901e5a3fd1d4c4f11a339/winiutils-4.15.56.tar.gz", hash = "sha256:279e0923c46f5814fea1457b609b0cc7e2fe716bba7c3d4ed157e86b1d47203c", size = 26375, upload-time = "2026-11-08T00:25:44.501Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0a/c8/597269792c7ffb12ae24d444d5d0d153efce5e57e4724d43e511334aa511/winiutils-4.15.65.tar.gz", hash = "sha256:e020b8e5cb40ab9918df988143fb0b4e94ced695903bf0b52fc22b670312137f", size = 26413, upload-time = "2026-11-09T01:41:08.715Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/96/2e/78327684f466d0fe3fd25ed3a11a160c9b8a24b8871354542584bc740241/winiutils-4.15.56-py3-none-any.whl", hash = "sha256:96e6a21c0a6c6f8bdd0e058f09be330d5526be85d5a87260037229290241a7bb", size = 34266, upload-time = "2026-11-08T00:25:43.37Z" },
+    { url = "https://files.pythonhosted.org/packages/94/d9/055fc6b22b9991ad7b4090585d73bfaac1670903470f772cc41b68161b5b/winiutils-4.15.65-py3-none-any.whl", hash = "sha256:283a242d5594f1053a6a703406b546323187fdecc92a6abb6fe5b1ddfe7b6e54", size = 34306, upload-time = "2026-11-09T01:41:07.397Z" },
 ]
 
 [[package]]
