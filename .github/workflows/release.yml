@@ -61,8 +61,6 @@
         "name": "Build Executable"
         "id": "build-executable"
         "run": "bash build-executable.sh"
-        "env":
-          "OS": "${{ runner.os }}"
       -
         "name": "Upload Executable"
         "id": "upload-executable"
