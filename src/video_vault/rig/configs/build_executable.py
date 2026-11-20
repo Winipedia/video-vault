@@ -7,7 +7,7 @@ from collections.abc import Iterable
 from types import ModuleType
 from typing import override
 
-from pyrig_executables.rig.configs.build_executable import (  # deptry: ignore[DEP004]
+from pyrig_executables.rig.configs.executables.build import (  # deptry: ignore[DEP004]
     BuildExecutableConfigFile as BaseBuildExecutableConfigFile,
 )
 from winipyside.rig import resources
